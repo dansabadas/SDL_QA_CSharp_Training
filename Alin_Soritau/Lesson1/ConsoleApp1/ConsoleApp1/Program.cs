@@ -15,7 +15,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine(value: "Hello I'm Alin");
             int i1 = 2;
-            int i2 = 0;
+            System.Int32 i2 = 0;
             var i3 = 5;
             Console.WriteLine(value: $"{i1} {i2} {i3}");
 
@@ -43,7 +43,7 @@ namespace ConsoleApp1
             by2++;
             Console.WriteLine(by2);
 
-            int ii1 = 13 / 3, ii2 = 13%3;
+            int ii1 = 13 / 3, ii2 = 13 % 3;
             double dd1 = 13 / 3d;
             Console.WriteLine($"{ii1}, {ii2}, {dd1}");
 
@@ -56,7 +56,87 @@ namespace ConsoleApp1
             double dd4 = 1000 / dd3;
             Console.WriteLine(dd4);
 
+            bool b11 = false;
+            bool b12 = !b11;
+            Console.WriteLine("Truth value: {0}", b12);
+            if (!b11)
+            {
+
+            }
+
+            int ii3 = 5;
+            bool isOdd = (ii3 % 2) == 1;
+            //if ((ii3 % 2) == 0)
+            //    Console.WriteLine(true);
+            //else
+            //    Console.WriteLine(false);
+
+            if (isOdd)
+                Console.WriteLine(value: $"{ii3} is odd");
+            else
+                Console.WriteLine(value: $"{ii3} is even");
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(value: $"i = {i}");
+            }
+
+            int j = 0;
+            while (j < 10)
+            {
+                Console.WriteLine(value: $"j = {j}");
+                j++;
+            }
+
+            Metals m3 = Metals.Silver;
+            switch (m3)
+            {
+                case Metals.Gold:
+                    Console.WriteLine(value: $"nice gold medal!");
+                    break;
+                case Metals.Silver:
+                    Console.WriteLine(value: $"this is my favorite metal");
+                    break;
+                default:
+                    Console.WriteLine(value: $"I'm not interested in these!");
+                    return;
+            }
+
+            var result1 = AddTwoNumbers(a: 4, b: 5);
+            Console.WriteLine(value: $"result = {result1}");
+
+            int result2 = Sum(n:10);
+            Console.WriteLine(result2);
+            int result3 = SumIterative(n: 15);
+            Console.WriteLine(result3);
+
             Console.Read();
+        }
+
+        public static int AddTwoNumbers(int a, int b)
+        {
+            int sum = 2 * a + b;
+            return sum;
+        }
+
+        public static int Sum(int n)
+        {
+            if (n == 0)
+            {
+                return 0;
+            }
+            return n + Sum(n: n - 1);
+        }
+
+        public static int SumIterative(int n)
+        {
+            int finalValue = 0;
+            while(n >= 0)
+            {
+                finalValue += n;
+                n--;
+            }
+            return finalValue;
         }
     }
 }
