@@ -24,7 +24,7 @@ namespace ConsoleApp1
 
             float f1 = 2.5f;
             var f2 = 3.5;
-            Console.WriteLine(value: $"{f2} {f2}");
+            Console.WriteLine(value: $"{f1} {f2}");
 
             char c1 = 'd',c2 = 'I';
             Console.WriteLine(value: $"{c1} {(int)c1} {c2} {(int)c2}");
@@ -36,14 +36,16 @@ namespace ConsoleApp1
             //byte by3 = by2 + 10;
             Console.WriteLine(value: $"{by1} {by2}");
 
+            by2++;//by 2+ 1
+            by2++;
+            Console.WriteLine(value: $"{by2}");
+
             Medals m1 = Medals.gold;
             Console.WriteLine(value: $"{m1} {(int)m1}");
              
             String s1 = "Hello wold!";
             Console.WriteLine(s1);
-            by2++;//by 2+ 1
-            by2++;
-            Console.WriteLine(value: $"{by2}");
+            
 
             int ii1 = 13 / 3, ii2= 13 % 3;
             double dd1 = 13 / 3d;
@@ -51,22 +53,16 @@ namespace ConsoleApp1
 
             double dd2 = dd1 + 34;
             Console.WriteLine(value: $"{dd2}");
-           // double dd4 = 1000/ dd3;
-           // Console.WriteLine(value: $"{dd4}");
+
+            int dd3 = 4;
+            double dd4 = 1000/ dd3;
+            Console.WriteLine(value: $"{dd4}");
 
             bool bb1 = true;
             bool bb2 = !bb1;
             Console.WriteLine("Truth value:{0}",bb2);
-            if (!bb1)
-            {
-                 
-            }
-            //else
-            //{
-
-            //}
+            
             int ii3 = 4;
-
             if (ii3 % 2 == 0)
             {
                 Console.WriteLine(value: $"{ii3}is odd");
@@ -85,6 +81,7 @@ namespace ConsoleApp1
 
             for (int i = 0; i < 10; i++)
                 Console.WriteLine(value: $"i={i}");
+
             int j=0;
             while (j< 10)
             {
