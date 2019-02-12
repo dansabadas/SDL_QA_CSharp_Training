@@ -75,7 +75,8 @@ namespace ConsoleApp1
             //  int ii3 = 4;
 
             Console.WriteLine("Enter: ");
-            int ii3 = Console.Read();
+            string input= Console.ReadLine();
+            int ii3 = Convert.ToInt32(input);
             if (ii3 % 2 == 0)
             {
                 Console.WriteLine("The number is even.");
