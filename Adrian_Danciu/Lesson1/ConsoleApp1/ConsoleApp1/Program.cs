@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ConsoleApp1
 {
@@ -122,6 +123,73 @@ namespace ConsoleApp1
 
             int result2 = Sum(10);
             Console.WriteLine("Result2: {0}", result2);
+
+            long result5 = Factorial(5);
+            Console.WriteLine($"{result5}");
+
+
+            int[] intArr1 = new int[10];
+            int[] intArr2 = new int[5] { 1, 2, 3, 4, 5 };
+            int[] intArr3 = { 1, 2, 3, 4, 5 };
+
+            
+            for (int i = 0; i < intArr2.Length; i++)
+            {
+                Console.WriteLine($"i={intArr2[i]}");
+            }
+
+            string[] string1 = { "bla", "bla2", "bla3" };
+            
+            for (int i = 0; i < string1.Length; i++)
+            {
+                Console.WriteLine($"string={string1[i]}");
+            }
+
+            ArrayList arl1 = new ArrayList();
+            arl1.Add("hello");
+            arl1.Add(4.5);
+
+            for (int i = 0; i < arl1.Count; i++)
+            {
+                Console.WriteLine($"List={arl1[i]}");
+            }
+
+            foreach(object element in arl1)
+            {
+                Console.WriteLine(element);
+            }
+
+            //homework
+            //1.
+            //int[] unsortedRawArray = { 3, 2, 1, 45, 0 };
+            //int[] orice = MySort();
+
+            //int fiboResult = Fibonacci(5);
+            //Console.WriteLine(fiboResult);
+
+            //for (int i = 0; i < 11; i++)
+            //{
+            //    int fiboResult1 = Fibonacci(i);
+            //    Console.WriteLine($"{i}: {fiboResult1}");
+            //}
+
+            //public static int Fibonacci (int n)
+            //{
+
+            //    if ((n == 0) || (n == 1))
+            //    {
+            //        return 1;
+            //    }
+                
+            //    return Fibonacci(n - 1) + Fibonacci(n - 2);
+            //}
+
+
+            //public static int[] MySort(int[] a)
+            //{
+            //    .....
+            //}
+
         }
 
         public static int AddTwoNumbers(int a, int b)
@@ -151,5 +219,18 @@ namespace ConsoleApp1
             return finalValue;
         }
 
+       
+        public static long Factorial(int n)
+        {
+            if (n == 0)
+            {
+                return 1;
+            }
+
+            return n * Factorial(n-1);            
+        }
+            
+
     }
 }
+
