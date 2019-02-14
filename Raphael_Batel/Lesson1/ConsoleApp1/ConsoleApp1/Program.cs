@@ -165,6 +165,10 @@ namespace Training
             for(int i = 0; i <= 10; i++ )
                 Console.WriteLine($"{i}: {Fibbonacci(i)}");
 
+            // homework:
+            // 1. Sort algorith
+            // 2. Fibbonacci interatively
+
         }
 
         public static int Fibbonacci(int n)
