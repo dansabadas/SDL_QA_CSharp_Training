@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ConsoleApp1
 {
@@ -105,12 +106,64 @@ namespace ConsoleApp1
             var result1 = AddTwoNumbers(a: 4, b: 5);
             Console.WriteLine(value: $"result = {result1}");
 
-            int result2 = Sum(n:10);
+            int result2 = Sum(n: 15);
             Console.WriteLine(result2);
             int result3 = SumIterative(n: 15);
             Console.WriteLine(result3);
+            int result4 = SumFormula(15);
+            Console.WriteLine(result4);
 
+            var result5 = Factorial(5);
+            Console.WriteLine(result5);
+            var result6 = FactorialIterative(5);
+            Console.WriteLine(result6);
+
+            int[] inArr1 = new int[10];
+            int[] inArr2 = new int[5] { 1, 2, 4, 8, 11 };
+            for (int i = 0; i < inArr2.Length; i++)
+            {
+                Console.WriteLine(inArr2[i]);
+            }
+
+            string[] stringArr4 = { "bla", "hey", "123", "one", "two" };
+            for (int i = 0; i < stringArr4.Length; i++)
+            {
+                Console.WriteLine(stringArr4[i]);
+            }
+
+            ArrayList arl1 = new ArrayList();
+            arl1.Add(value: 3);
+            arl1.Add(value: 4);
+            foreach (object n in arl1)
+            {
+                Console.WriteLine(n);
+            }
+
+            arl1.Add("hello");
+            arl1.Add(4.5);
+
+            for (int i = 0; i < arl1.Count; i++)
+            {
+                Console.WriteLine(arl1[i]);
+            }
+
+            // HOMEWORK
+            // 1. Homework: 1. given any array as input, produce as output the sorted array
+            // (do nout use build-in functions like Array.Sort() but create your own sorting implementation
+            // 2. Implement Fibonacci function iterative
+            int[] unsortedRawArray = { 3, 2, 1, 45, 0 };
+            int[] whaterverArray = MySort(unsortedRawArray);
+
+
+            int fiboResult = Fibonacci(5);
+            Console.WriteLine(fiboResult);
             Console.Read();
+        }
+
+        public static int[] MySort(int[] a)
+        {
+
+            return new int[0];
         }
 
         public static int AddTwoNumbers(int a, int b)
@@ -131,12 +184,45 @@ namespace ConsoleApp1
         public static int SumIterative(int n)
         {
             int finalValue = 0;
-            while(n >= 0)
+            while (n >= 0)
             {
                 finalValue += n;
                 n--;
             }
             return finalValue;
+        }
+
+        public static long Factorial(int n)
+        {
+            if (n == 0)
+            {
+                return 1;
+            }
+            return n * Factorial(n - 1);
+        }
+
+        public static long FactorialIterative(int n)
+        {
+            long result = 0;
+            if (n == 0)
+                return 1;
+            while (n > 0)
+            {
+                result = n * (n - 1);
+            }
+            return result;
+        }
+
+        public static int SumFormula(int n)
+        {
+            return (n * (n + 1) / 2);
+        }
+
+        public static int Fibonacci(int n)
+        {
+            if (n == 0 || n == 1)
+                return 1;
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
     }
 }
