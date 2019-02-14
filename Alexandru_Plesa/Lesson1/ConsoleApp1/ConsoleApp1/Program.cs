@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ConsoleApp1
 {
@@ -107,12 +108,72 @@ namespace ConsoleApp1
             int result3 = SumIterative(11);
             Console.WriteLine(result3);
 
+            long result4 = Factorial(5);
+            Console.WriteLine(result4);
+
+            long result5 = FactorialIterative(5);
+            Console.WriteLine(result5);
+
+            int result6 = SumFormula(5);
+            Console.WriteLine(result6);
+
+            int[] intArr1 = new int[10];
+            int[] intArr2 = new int[6] { 1, 2, 3, 4, 5, 9 };
+            string[] stringArr1 = new string[3] { "some string 1", "some string 2", "some string 3"};
+
+            foreach (int number in intArr2)
+            {
+                Console.WriteLine(number);
+            }
+
+            foreach (string word in stringArr1)
+            {
+                Console.WriteLine(word);
+            }
+
+            ArrayList arrList = new ArrayList();
+            arrList.Add(3);
+            arrList.Add(4);
+            arrList.Add("string");
+            arrList.Add(9.9);
+            int[] unsortedValues = { 1, 2, 3, 4 };
+            int[] sortedNumbers = MySort(unsortedValues);
+
+            Console.WriteLine(Fibonacii(10));
+            //homework 
+            // Create a function that sorts arrays
+            // Create a function that prints fibonaci numbers
+
+            
+
+
+
+            foreach (object word in arrList)
+            {
+                Console.WriteLine(word);
+            }
+
             Console.ReadLine();
         }
         public static int AddTwoNumbers(int a, int b)
         {
             int result = a + b;
             return result;
+        }
+
+        public static int[] MySort(int[] myarray)
+        {
+            return myarray;
+        }
+
+        public static int Fibonacii(int n)
+        {
+
+            if (n == 0 || n  == 1)
+            {
+                return 1;
+            }
+            return  Fibonacii(n - 1) + Fibonacii(n - 2);
         }
 
         public static int Sum(int n)
@@ -135,6 +196,33 @@ namespace ConsoleApp1
             }
 
             return finalValue;
+        }
+
+        public static long Factorial(int n)
+        {
+            if (n == 1)
+            {
+                return 1;
+            }
+
+            return n * Factorial(n - 1);
+        }
+
+        public static long FactorialIterative(int n)
+        {
+            long finalValue = 1;
+            while (n >= 1)
+            {
+                finalValue = finalValue * n;
+                n--;
+            }
+
+            return finalValue;
+        }
+
+        public static int SumFormula(int n)
+        {
+            return (n * (n + 1)) / 2;
         }
 
     }
