@@ -47,7 +47,7 @@ namespace ConsoleApp2
             Student[] myStudentArray = CreateStudents(20);
             foreach (Student currentStudent in myStudentArray)
             {
-                Console.WriteLine(currentStudent.Name);
+                Console.WriteLine(currentStudent.Name); 
             }
         }
 
