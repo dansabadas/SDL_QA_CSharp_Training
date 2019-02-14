@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ConsoleApp1
 {
@@ -14,7 +15,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-        
+
             Console.WriteLine("Hello I'm Ligia");
 
             int i1 = 2;
@@ -26,7 +27,7 @@ namespace ConsoleApp1
             var f2 = 3.5;
             Console.WriteLine(value: $"{f1} {f2}");
 
-            char c1 = 'd',c2 = 'I';
+            char c1 = 'd', c2 = 'I';
             Console.WriteLine(value: $"{c1} {(int)c1} {c2} {(int)c2}");
 
             bool b1 = true, b2 = false;
@@ -42,12 +43,12 @@ namespace ConsoleApp1
 
             Medals m1 = Medals.gold;
             Console.WriteLine(value: $"{m1} {(int)m1}");
-             
+
             String s1 = "Hello wold!";
             Console.WriteLine(s1);
-            
 
-            int ii1 = 13 / 3, ii2= 13 % 3;
+
+            int ii1 = 13 / 3, ii2 = 13 % 3;
             double dd1 = 13 / 3d;
             Console.WriteLine(value: $"{ii1} {ii2} {dd1}");
 
@@ -55,13 +56,13 @@ namespace ConsoleApp1
             Console.WriteLine(value: $"{dd2}");
 
             int dd3 = 4;
-            double dd4 = 1000/ dd3;
+            double dd4 = 1000 / dd3;
             Console.WriteLine(value: $"{dd4}");
 
             bool bb1 = true;
             bool bb2 = !bb1;
-            Console.WriteLine("Truth value:{0}",bb2);
-            
+            Console.WriteLine("Truth value:{0}", bb2);
+
             int ii3 = 4;
             if (ii3 % 2 == 0)
             {
@@ -82,8 +83,8 @@ namespace ConsoleApp1
             for (int i = 0; i < 10; i++)
                 Console.WriteLine(value: $"i={i}");
 
-            int j=0;
-            while (j< 10)
+            int j = 0;
+            while (j < 10)
             {
                 Console.WriteLine(value: $"j={j}");
                 j++;
@@ -110,8 +111,73 @@ namespace ConsoleApp1
             int result2 = Sum(10);
             Console.WriteLine(result2);
 
+            int result3 = SumIterative(10);
+            Console.WriteLine(result3);
+
+            long result4 = Factorial(3);
+            Console.WriteLine(result4);
+
+            long result5 = FactorialIterativ(3);
+            Console.WriteLine(result5);
+
+            int[] arr1 = new int[10];
+            int[] arr2 = new int[5] { 1, 2, 5, 4, 3, };
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                Console.WriteLine(arr1[i]);
+            }
+            for (int k = 0; k < arr2.Length; k++)
+            {
+                Console.WriteLine(arr2[k]);
+            }
+
+            string[] arr3 = new string[5] { "arr", "bla", "123", "f", "ds" };
+            for (int i = 0; i < arr3.Length; i++)
+            {
+                Console.WriteLine(arr3[i]);
+            }
+
+
+            ArrayList arl1 = new ArrayList();
+            arl1.Add(3);
+            arl1.Add(4);
+            foreach (object element in arl1)
+            {
+                Console.WriteLine(element);
+            }
+            arl1.Add("hello");
+            arl1.Add(4.5);
+            for(int i=0;i<arl1.Count;i++)
+            {
+                Console.WriteLine(arl1[i]);
+            }
+            //homework 
+            //create a sort function with 1 param (arr). it should return an array.
+            //int[] unsortedArray = { 1,2,43, 4, 2, 7, 2 };
+            //int[] eateverArray = Mysort(unsortedArray);
+            //implement fibonacci iterative
+
+            int fiboResult = Fibonacci(5);
+            Console.WriteLine(fiboResult);
+
+            for(int i = 0; i < 11; i++ )
+            {
+                int fiboResult1= Fibonacci(5);
+                Console.WriteLine(value:$"{i}:fiboResult1");
+            }
+
         }
-        public static int AddTwoNubers (int a, int b)
+        public static int Fibonacci(int n)
+        {
+            if (n==0||n==1)
+            {
+                return 1;
+            }
+            return Fibonacci(n = 1) + Fibonacci(n - 2);
+        }
+
+
+            public static int AddTwoNubers (int a, int b)
         {
             int calculatedVlues = 2 * a + b;
             return calculatedVlues;
@@ -124,6 +190,22 @@ namespace ConsoleApp1
             }
             return n + Sum(n - 1);
         }
+        
+
+        public static long Factorial(int n)
+        {
+                if(n==0)
+                {
+                    return 1;
+                }
+                return n * Factorial(n-1);
+        }
+        public static long FactorialIterativ(int n )
+        {
+            // n fact iterativ
+            return 0;
+        }
+
         public static int SumIterative(int n)
         {
             int finalValue = 0;
