@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Diagnostics;
 
 namespace Training
 {
@@ -121,6 +123,55 @@ namespace Training
             int result2 = Sum(10);
             Console.WriteLine(result2);
 
+            int result3 = SumIterative(10);
+            Console.WriteLine(result3);
+
+            long factorial = Factorial(3);
+            Console.WriteLine(factorial);
+
+            long factInterative = FactorialInterative(4);
+            Console.WriteLine(factInterative);
+
+            int sumForm = SumFormula(10);
+            Console.WriteLine(sumForm);
+
+            int[] intArray1 = new int[10];
+            int[] intArray2 = new int[5] { 1, 2, 4, 8, 11};
+            int [] intArray3 = { 1, 2, 4, 8, 11 };
+
+            foreach (int i in intArray2)
+            {
+                Console.WriteLine(i);
+            }
+
+            string[] strArray4 = { "hei", "ho", "suckas", "", null };
+
+            foreach(string s in strArray4)
+                Console.WriteLine(s);
+
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(3);
+            arrayList.Add(4);
+
+            foreach(object o in arrayList)
+                Console.WriteLine(o);
+
+            arrayList.Add("Halo");
+            arrayList.Add(4.5);
+
+            for(int i = 0; i < arrayList.Count; i ++)
+                Console.WriteLine(arrayList[i]);
+
+            for(int i = 0; i <= 10; i++ )
+                Console.WriteLine($"{i}: {Fibbonacci(i)}");
+
+        }
+
+        public static int Fibbonacci(int n)
+        {
+            if (n == 0 || n == 1)
+                return 1;
+            return Fibbonacci(n - 1) + Fibbonacci(n - 2);
         }
 
         public static int AddTwoNumbers(int a, int b)
@@ -136,6 +187,11 @@ namespace Training
             return n + Sum(n - 1);
         }
 
+        public static int SumFormula(int n)
+        {
+            return (n * (n + 1)) / 2;
+        }
+
         public static int SumIterative(int n)
         {
             int finalValue = 0;
@@ -147,6 +203,31 @@ namespace Training
             return finalValue;
         }
 
+        public static long Factorial(int n)
+        {
+            if(n < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(n), n, "Argument cannot be negative.");
+            }
+            if (n == 0)
+                return 1;
+            return n * Factorial(n - 1);
+        }
+
+
+        public static long FactorialInterative(int n)
+        {
+            if (n < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(n), n, "Argument cannot be negative.");
+            }
+
+            long product = 1;
+            for (int i = 2; i <= n; i++)
+                product *= i;
+
+            return product;
+        }
 
     }
 
