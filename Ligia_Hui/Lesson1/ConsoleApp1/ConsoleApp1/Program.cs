@@ -162,14 +162,14 @@ namespace ConsoleApp1
 
             for(int i = 0; i < 11; i++ )
             {
-                int fiboResult1= Fibonacci(5);
-                Console.WriteLine(value:$"{i}:fiboResult1");
+                int fiboResult1= Fibonacci(i);
+                Console.WriteLine(value:$"{i}:n{fiboResult1}");
             }
 
         }
         public static int Fibonacci(int n)
         {
-            if (n==0||n==1)
+            if (n==0 || n==1)
             {
                 return 1;
             }
@@ -177,7 +177,7 @@ namespace ConsoleApp1
         }
 
 
-            public static int AddTwoNubers (int a, int b)
+        public static int AddTwoNubers (int a, int b)
         {
             int calculatedVlues = 2 * a + b;
             return calculatedVlues;
