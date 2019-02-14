@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ConsoleApp1
 {
@@ -73,7 +74,7 @@ namespace ConsoleApp1
             }
 
             //  int ii3 = 4;
-
+/*
             Console.WriteLine("Enter: ");
             string input= Console.ReadLine();
             int ii3 = Convert.ToInt32(input);
@@ -115,14 +116,89 @@ namespace ConsoleApp1
                     Console.WriteLine($"Not interested.");
                     return; // stops the method
             }
-
+*/
             int result1 = AddTwoNumbers(4, 5);
             Console.WriteLine($"sum={result1}");
 
             int result2 = Sum(10);
             Console.WriteLine(result2);
+            int result3 = SumIterative(10);
+            Console.WriteLine(result3);
+
+            long result4 = Factorial(3);
+            Console.WriteLine(result4);
+
+            long result5 = SumFormula(3);
+            Console.WriteLine(result5);
+
+            int[] intArr1 = new int[10];
+            int[] intArr2 = new int[] { 1, 2, 4, 8, 11 };
+            int[] intArr3 = { 1, 2, 4, 8, 11 };
+            for (int i=0; i<intArr2.Length; i++)
+            {
+                Console.WriteLine(intArr2[i]);
+            }
+            string[] stringArr4 = { "I", " am", " happy,", " oh", " joy!" };
+            for (int i = 0; i < stringArr4.Length; i++)
+            {
+                Console.Write(stringArr4[i]);
+            }
+            Console.WriteLine();
+
+            ArrayList arl1 = new ArrayList();
+            arl1.Add(3);
+            arl1.Add(4);
+/*
+            for (int i = 0; i < arl1.Count; i++)
+            {
+                Console.Write(arl1[i]);
+            }
+            Console.WriteLine();*/
+
+            foreach (var i in arl1) // a bit slower becaus eit has to transform it to a for
+            {
+                Console.WriteLine(i);
+            }
+
+            arl1.Add("jjj");
+            arl1.Add(4.5f);
+
+            for (int i = 0; i < arl1.Count; i++)
+            {
+                Console.Write(arl1[i]);
+            }
+            Console.WriteLine();
+
+            //Homework
+
+            //1. Given an array as input, produce the sorted array
+            // do not use any built in functions like Array.Sort(). but create your own sorting implementation
+            int[] unsortedArray = { 3, 2, 1, 45, 0 };
+            //int[] myArray = mySort(unsortedArray);
 
 
+            //2. Implement Fibonacci iteratively
+            //Save the homework in the consoleapp
+
+            int fiboResult = Fibonacci(5);
+
+            Console.WriteLine(fiboResult);
+            for (int i=0; i< 11; i++)
+            {
+                int fiboResult1 = Fibonacci(i);
+                Console.WriteLine($"{i}:{fiboResult1}");
+            }
+
+
+
+        }
+        public static int Fibonacci(int n)
+        {
+            if (n == 0 || n == 1)
+            {
+                return 1;
+            }
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
 
         public static int AddTwoNumbers(int a, int b)
@@ -141,7 +217,7 @@ namespace ConsoleApp1
             return n + Sum(n-1);
         }
 
-        public static int SumIterative(int n) // not efficient
+        public static int SumIterative(int n) // most efficient
         {
             int finalValue = 0;
             while (n>=0)
@@ -151,5 +227,38 @@ namespace ConsoleApp1
             }
             return finalValue;
         }
+
+        /* public static long Factorial (int n)
+         {
+             if (n == 0)
+             {
+                 return 1;
+             }
+             return n *= n - 1;
+         }
+        public static long Factorial(int n)
+        {
+            if (n == 0) // or n==1
+            {
+                return 1;
+            }
+            return n * Factorial(n - 1);
+        }*/
+
+        public static long Factorial(int n) // most efficient
+        {
+            int finalValue = 1;
+            while (n >0)
+            {
+                finalValue *= n;
+                n--;
+            }
+            return finalValue;
+        }
+
+        public static long SumFormula(int n)
+        {
+            return (n * (n + 1) / 2);
+        }
     }
-}
+    }
