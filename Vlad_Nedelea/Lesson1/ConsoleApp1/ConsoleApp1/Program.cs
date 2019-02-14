@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ConsoleApp1
 {
@@ -24,7 +25,7 @@ namespace ConsoleApp1
 
             bool b1 = true;
 
-            byte by1 = 234;
+
             byte by2 = 10;
             by2++;
             string s1 = "hello";
@@ -49,8 +50,8 @@ namespace ConsoleApp1
                 Console.WriteLine("odd");
             }
 
-           
-           
+
+
             Medals m3 = Medals.gold;
             switch (m3)
             {
@@ -63,25 +64,67 @@ namespace ConsoleApp1
                     break;
             }
 
-            int result1 = AddNumbers(4,5);
+            int result1 = AddNumbers(4, 5);
 
             Console.WriteLine(result1);
+
+
+
+
 
             int n = 10;
 
             Console.WriteLine(Sum(n));
 
-          //  Console.WriteLine( $"{(int)c1},{b1}, {by2}, {s1}, {ii1}, {dd1}, {dd2}, {dd4}");
+            Console.WriteLine(FactorialIterative(3));
 
-           
-            Console.ReadKey();
+            //  Console.WriteLine( $"{(int)c1},{b1}, {by2}, {s1}, {ii1}, {dd1}, {dd2}, {dd4}");
+
+            Console.WriteLine(Factorial(3));
+
+            int[] array1 = new int[10];
+            int[] array2 = new int[5] { 1, 2, 3, 4, 5 };
+
+            for (int i = 0; i < array2.Length; i++) Console.WriteLine(array2[i]);
+
+            string[] stringArray1 = new string[10];
+            string[] stringArray2 = new string[5] { "aaa", "grg", "jjj", "rgr", "rgr" };
+
+            for (int i = 0; i < stringArray2.Length; i++) Console.WriteLine(stringArray2[i]);
+
+            ArrayList arls = new ArrayList();
+            arls.Add(3);
+            arls.Add(4);
+            arls.Add(78);
+
+
+            // foreach (object element in arls) Console.WriteLine(element);
+
+            arls.Add("fg");
+            arls.Add(4.6);
+            arls.Add(78);
+
+            for (int i = 0; i < 6; i++) Console.WriteLine(arls[i]);
+
+            //homework
+            // 1. sorted array
+            // 2. fibonacci iterative
+
+            Console.WriteLine(Fibonacci(5));
+
+            for (int i = 0; i < 11; i++)
+            {
+                Console.WriteLine(Fibonacci(i));
+
+            }
+                Console.ReadKey();
 
         }
 
         public static int AddNumbers(int a, int b)
         {
-            int calcuklatedvakue = a + b;
-            return calcuklatedvakue;
+            int calculate = a + b;
+            return calculate;
         }
 
         public static int Sum(int n)
@@ -89,6 +132,39 @@ namespace ConsoleApp1
             if (n == 0) return 0;
 
             return n + Sum(n - 1);
+        }
+
+        public static long Factorial(int n)
+        {
+            if ((n == 1) || (n == 0)) return 1;
+
+            return n * Factorial(n - 1);
+
+        }
+
+        public static long FactorialIterative(int n)
+        {
+            long result = 1;
+
+            for (int i = 1; i <= n; i++)
+            {
+                result = result * i;
+
+            }
+
+            return result;
+        }
+
+        public static int SumFormula(int n)
+        {
+
+            return (n * (n + 1)) / 2;
+        }
+
+        public static int Fibonacci(int n)
+        {
+            if (n == 0 || n == 1) return 1;
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
 
     }
