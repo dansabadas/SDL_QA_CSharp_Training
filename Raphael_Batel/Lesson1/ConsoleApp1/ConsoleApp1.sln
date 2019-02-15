@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson2", "..\..\Lesson2\Lesson2\Lesson2.csproj", "{0CB1372A-2D51-4FF5-8C23-DBD2EF9CD273}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework1", "Homework1\Homework1.csproj", "{C1EB78E4-8DAA-4889-80C5-218228CA5AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2_FibonacciIterative", "Homework2\Homework2_FibonacciIterative.csproj", "{6449DB7B-01B8-4A4A-903B-6C80BD4A0737}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{0CB1372A-2D51-4FF5-8C23-DBD2EF9CD273}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CB1372A-2D51-4FF5-8C23-DBD2EF9CD273}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CB1372A-2D51-4FF5-8C23-DBD2EF9CD273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1EB78E4-8DAA-4889-80C5-218228CA5AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1EB78E4-8DAA-4889-80C5-218228CA5AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1EB78E4-8DAA-4889-80C5-218228CA5AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1EB78E4-8DAA-4889-80C5-218228CA5AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6449DB7B-01B8-4A4A-903B-6C80BD4A0737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6449DB7B-01B8-4A4A-903B-6C80BD4A0737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6449DB7B-01B8-4A4A-903B-6C80BD4A0737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6449DB7B-01B8-4A4A-903B-6C80BD4A0737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

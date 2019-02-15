@@ -51,7 +51,7 @@ namespace Lesson2
             Console.WriteLine(students1.Length);
             foreach (Student student in students1)
             {
-                Console.WriteLine(student.Name.);
+                Console.WriteLine(student.Name);
             }
 
         }
