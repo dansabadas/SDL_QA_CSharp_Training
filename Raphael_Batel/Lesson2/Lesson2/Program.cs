@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Lesson2
 {
-    class Student
+    public class Student
     {
         int Id;
         public double Average;
