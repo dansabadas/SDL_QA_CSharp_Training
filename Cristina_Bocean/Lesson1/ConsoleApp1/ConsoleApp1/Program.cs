@@ -155,7 +155,7 @@ namespace ConsoleApp1
             }
             Console.WriteLine();
 
-            foreach (var i in arl1) // a bit slower becaus eit has to transform it to a for
+            foreach (var i in arl1) // a bit slower because it has to transform it to a for
             {
                 Console.WriteLine(i);
             }
@@ -171,12 +171,12 @@ namespace ConsoleApp1
             int fiboResult = Fibonacci(11);
 
             Console.WriteLine(fiboResult);
-            for (int i=0; i< 11; i++)
+            for (int i=0; i<= 11; i++)
              {
                  int fiboResult1 = Fibonacci(i);
                  Console.WriteLine($"{i}:{fiboResult1}");
-             }
-            */
+             }*/
+            
 
 
             //Homework
@@ -206,10 +206,10 @@ namespace ConsoleApp1
             //Save the homework in the consoleapp
 
 
-            int fibonacciIterativeResult = FibonacciIterative(11);
+            int fibonacciIterativeResult = FibonacciIterative(5);
 
             Console.WriteLine(fibonacciIterativeResult);
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i <= 5; i++)
             {
                 int fibonacciIterativeResult1 = FibonacciIterative(i);
                 Console.WriteLine($"{i}:{fibonacciIterativeResult1}");
@@ -268,21 +268,19 @@ namespace ConsoleApp1
         }
 
         /*
-         * fibonacci Iterative method -  var2
+            fibonacci Iterative method -  var2
          public static int FibonacciIterative(int n)
          {
 
-                          int[] fibonacci = new int[n+2];
-                          fibonacci[0] = 0;
-                          fibonacci[1] = 1;            
-                          for (int i = 2; i <= n; i++)
-                          {
-                              fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+            int[] fibonacci = new int[n+2];
+            fibonacci[0] = 0;
+            fibonacci[1] = 1;            
+            for (int i = 2; i <= n; i++)
+            {
+                fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
 
-                          }
-
-                          return fibonacci[n];
-
+            }
+            return fibonacci[n];
         */
         public static int Fibonacci(int n)
         {
