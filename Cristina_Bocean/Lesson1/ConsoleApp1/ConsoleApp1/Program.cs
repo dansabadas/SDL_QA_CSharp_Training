@@ -251,23 +251,9 @@ namespace ConsoleApp1
             return unsortedArray;
         }
 
-       
         
+
         public static int FibonacciIterative(int n)
-        /* {
-
-                         int[] fibonacci = new int[n+2];
-                         fibonacci[0] = 0;
-                         fibonacci[1] = 1;            
-                         for (int i = 2; i <= n; i++)
-                         {
-                             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-
-                         }
-
-                         return fibonacci[n];
-
-                     }*/
         {
             int a = 0;
             int b = 1;
@@ -281,6 +267,23 @@ namespace ConsoleApp1
             return a;
         }
 
+        /*
+         * fibonacci Iterative method -  var2
+         public static int FibonacciIterative(int n)
+         {
+
+                          int[] fibonacci = new int[n+2];
+                          fibonacci[0] = 0;
+                          fibonacci[1] = 1;            
+                          for (int i = 2; i <= n; i++)
+                          {
+                              fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+
+                          }
+
+                          return fibonacci[n];
+
+        */
         public static int Fibonacci(int n)
         {
             if (n == 0 || n == 1)
