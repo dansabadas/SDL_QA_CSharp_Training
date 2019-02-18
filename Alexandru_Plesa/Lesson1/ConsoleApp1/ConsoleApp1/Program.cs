@@ -144,7 +144,8 @@ namespace ConsoleApp1
 
             //Homework 
 
-            Console.WriteLine($"Fibonaci {ManualFibonacii(10)}");
+            Console.WriteLine($"Fibonaci manualy calculated with array {ManualFibonacii(10)}");
+            Console.WriteLine($"Fibonaci manualy calculated with addition {ManualFibonacii2(10)}");
             int[] unsortedValues = new int[] { 20, 5, 3, 4, 0, 99, -1, 0 };
 
             Console.WriteLine("Unsorted Numbers");
@@ -226,6 +227,23 @@ namespace ConsoleApp1
             }
 
             return arrayOfFibonaciNumbers[arrayOfFibonaciNumbers.Length - 1];
+        }
+
+        public static long ManualFibonacii2(int n)
+        {
+            long smallValue = 0;
+            long largeValue = 1;
+            long result = 0;
+
+            for (var i = 0; i < n - 2; i++)
+            {
+                result = largeValue + smallValue;
+                smallValue = largeValue;
+                largeValue = result;
+                
+            }
+
+            return result;
         }
 
         public static int Fibonacii(int n)
