@@ -20,7 +20,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hey ya, I'm Cris!");
+           /* Console.WriteLine("Hey ya, I'm Cris!");
             int id = 1;
             double average = 3.4;
             string name = "Cris";
@@ -48,7 +48,7 @@ namespace ConsoleApp2
              //   student.dateOfBirth = new DateTime(i, i, i);
                 students.Add(student);
             }
-                Console.WriteLine(students.Count);
+                Console.WriteLine(students.Count);*/
 
             Student[] myStudentArray = CreateStudents(10);
             foreach (Student stud in myStudentArray)
@@ -56,7 +56,17 @@ namespace ConsoleApp2
                 Console.WriteLine(stud.name);
             }
 
-          }
+            //Homework : Create a function called CreateStudents2 that returns an ArrayList with students (as a source of inspiration use the existing 
+            //public static Student[] CreateStudents(int numberOfStudents)just that instead of an array of students the function CreateStudents2 should
+            //return an ArrayList populated with the students.
+
+            ArrayList myStudentArray2 = CreateStudents2(10);
+            foreach (Student stud in myStudentArray2)
+            {
+                Console.WriteLine(stud.name);
+            }
+
+        }
 
         public static Student[] CreateStudents(int numberOfStudents)
         {
@@ -69,6 +79,18 @@ namespace ConsoleApp2
                 st[i] = student;
             }
             return st ;
+        }
+
+    public static ArrayList CreateStudents2(int numberOfStudents)
+        {
+            ArrayList st2 = new ArrayList();
+            for (int i = 0; i < numberOfStudents; i++)
+            {
+                Student student = new Student();
+                student.name = "Cris " + i;
+                st2.Add(student);
+            }
+            return st2;
         }
 
     }

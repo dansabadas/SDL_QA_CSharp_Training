@@ -6,14 +6,14 @@ namespace ConsoleApp1
     public enum Medals
     {
         Bronze = 2, // 0 is default
-        Silver= 6,
+        Silver = 6,
         Gold,
         Platinium
     }
     class Program
     {
         static void Main(string[] args)
-        {
+        {/*
             Console.WriteLine("Hello I'm Cris");
             int i1 = 2;
             int i2 = 0; // doesn't compile if it hasn't a value assigned
@@ -54,7 +54,7 @@ namespace ConsoleApp1
             double dd2 = dd1 + 34;
             Console.WriteLine($"{dd2}");
 
-            //      Console.WriteLine("Enter: ");
+            // Console.WriteLine("Enter: ");
             // double dd3 = Console.Read();
             double dd3 = 0;
             double dd4 = 1000 / dd3;
@@ -74,9 +74,9 @@ namespace ConsoleApp1
             }
 
             //  int ii3 = 4;
-/*
+
             Console.WriteLine("Enter: ");
-            string input= Console.ReadLine();
+            string input = Console.ReadLine();
             int ii3 = Convert.ToInt32(input);
             if (ii3 % 2 == 0)
             {
@@ -116,7 +116,7 @@ namespace ConsoleApp1
                     Console.WriteLine($"Not interested.");
                     return; // stops the method
             }
-*/
+            
             int result1 = AddTwoNumbers(4, 5);
             Console.WriteLine($"sum={result1}");
 
@@ -134,7 +134,7 @@ namespace ConsoleApp1
             int[] intArr1 = new int[10];
             int[] intArr2 = new int[] { 1, 2, 4, 8, 11 };
             int[] intArr3 = { 1, 2, 4, 8, 11 };
-            for (int i=0; i<intArr2.Length; i++)
+            for (int i = 0; i < intArr2.Length; i++)
             {
                 Console.WriteLine(intArr2[i]);
             }
@@ -148,12 +148,12 @@ namespace ConsoleApp1
             ArrayList arl1 = new ArrayList();
             arl1.Add(3);
             arl1.Add(4);
-/*
+
             for (int i = 0; i < arl1.Count; i++)
             {
                 Console.Write(arl1[i]);
             }
-            Console.WriteLine();*/
+            Console.WriteLine();
 
             foreach (var i in arl1) // a bit slower becaus eit has to transform it to a for
             {
@@ -168,37 +168,129 @@ namespace ConsoleApp1
                 Console.Write(arl1[i]);
             }
             Console.WriteLine();
+            int fiboResult = Fibonacci(11);
+
+            Console.WriteLine(fiboResult);
+            for (int i=0; i< 11; i++)
+             {
+                 int fiboResult1 = Fibonacci(i);
+                 Console.WriteLine($"{i}:{fiboResult1}");
+             }
+            */
+
 
             //Homework
 
             //1. Given an array as input, produce the sorted array
             // do not use any built in functions like Array.Sort(). but create your own sorting implementation
-            int[] unsortedArray = { 3, 2, 1, 45, 0 };
-            //int[] myArray = mySort(unsortedArray);
 
+
+            int[] unsortedArray = { 3, 2, 1, 4 };
+
+            Console.Write("The unsorted array is: ");
+            for (int i = 0; i < unsortedArray.Length; i++)
+            {
+                Console.Write(unsortedArray[i] + " ");
+            }
+
+            int[] sortedArray = QuickSort(unsortedArray, 0, unsortedArray.Length - 1);
+            Console.WriteLine();
+            Console.Write("The sorted array is: ");
+            for (int i = 0; i < sortedArray.Length; i++)
+            {
+                Console.Write(sortedArray[i] + " ");
+            }
+            Console.WriteLine();
 
             //2. Implement Fibonacci iteratively
             //Save the homework in the consoleapp
 
-            int fiboResult = Fibonacci(5);
 
-            Console.WriteLine(fiboResult);
-            for (int i=0; i< 11; i++)
+            int fibonacciIterativeResult = FibonacciIterative(11);
+
+            Console.WriteLine(fibonacciIterativeResult);
+            for (int i = 0; i < 11; i++)
             {
-                int fiboResult1 = Fibonacci(i);
-                Console.WriteLine($"{i}:{fiboResult1}");
+                int fibonacciIterativeResult1 = FibonacciIterative(i);
+                Console.WriteLine($"{i}:{fibonacciIterativeResult1}");
             }
-
-
-
         }
+        
+        public static int[] QuickSort(int[] unsortedArray, int left, int right)
+        {
+            int l = left;
+            int r = right;
+            int p = unsortedArray[(l + r) / 2];
+            while (l <= r)
+            {
+                while (unsortedArray[l] < p)
+                {
+                    l++;
+                }
+                while (p < unsortedArray[r])
+                {
+                    r--;
+                }
+                if (l <= r)
+                {
+                    int temp = unsortedArray[l];
+                    unsortedArray[l] = unsortedArray[r];
+                    unsortedArray[r] = temp;
+                    l++;
+                    r--;
+                }
+                if (left < r)
+                {
+                    QuickSort(unsortedArray, left, r);
+                }
+                if (l < right)
+                {
+                    QuickSort(unsortedArray, l, right);
+                }
+            }
+            return unsortedArray;
+        }
+
+       
+        
+        public static int FibonacciIterative(int n)
+        /* {
+
+                         int[] fibonacci = new int[n+2];
+                         fibonacci[0] = 0;
+                         fibonacci[1] = 1;            
+                         for (int i = 2; i <= n; i++)
+                         {
+                             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+
+                         }
+
+                         return fibonacci[n];
+
+                     }*/
+        {
+            int a = 0;
+            int b = 1;
+
+            for (int i = 0; i < n; i++)
+            {
+                int temp = a;
+                a = b;
+                b = temp + b;
+            }
+            return a;
+        }
+
         public static int Fibonacci(int n)
         {
             if (n == 0 || n == 1)
             {
-                return 1;
+                return n;
             }
-            return Fibonacci(n - 1) + Fibonacci(n - 2);
+            else
+            {
+                return Fibonacci(n - 1) + Fibonacci(n - 2);
+            }
         }
 
         public static int AddTwoNumbers(int a, int b)
@@ -207,20 +299,20 @@ namespace ConsoleApp1
             return calculatedValue;
         }
 
-        
-        public static int Sum(int n) // not efficient
+
+        public static int Sum(int n) // not so efficient
         {
-            if(n==0)
+            if (n == 0)
             {
                 return 0;
             }
-            return n + Sum(n-1);
+            return n + Sum(n - 1);
         }
 
         public static int SumIterative(int n) // most efficient
         {
             int finalValue = 0;
-            while (n>=0)
+            while (n >= 0)
             {
                 finalValue = finalValue + n;
                 n--;
@@ -248,7 +340,7 @@ namespace ConsoleApp1
         public static long Factorial(int n) // most efficient
         {
             int finalValue = 1;
-            while (n >0)
+            while (n > 0)
             {
                 finalValue *= n;
                 n--;
@@ -261,4 +353,4 @@ namespace ConsoleApp1
             return (n * (n + 1) / 2);
         }
     }
-    }
+}
