@@ -136,15 +136,38 @@ namespace ConsoleApp1
             arrList.Add(4);
             arrList.Add("string");
             arrList.Add(9.9);
-            int[] unsortedValues = { 1, 2, 3, 4 };
-            int[] sortedNumbers = MySort(unsortedValues);
 
-            Console.WriteLine(Fibonacii(10));
-            //homework 
-            // Create a function that sorts arrays
+
+            Console.WriteLine($"Fibonaci {Fibonacii(10)}");
+
+
+
+            //Homework 
+
+            Console.WriteLine($"Fibonaci {ManualFibonacii(10)}");
+            int[] unsortedValues = new int[] { 20, 5, 3, 4, 0, 99, -1, 0 };
+
+            Console.WriteLine("Unsorted Numbers");
+
+            foreach (int number in unsortedValues)
+            {
+                Console.WriteLine(number);
+            }
+
+            //int[] sortedNumbers = MySort(unsortedValues);
+
+            Console.WriteLine("Sorted Numbers");
+
+            //foreach (int number in sortedNumbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            int[] nr = ManualSort(unsortedValues);
+
             // Create a function that prints fibonaci numbers
 
-            
+
 
 
 
@@ -163,7 +186,46 @@ namespace ConsoleApp1
 
         public static int[] MySort(int[] myarray)
         {
+            Array.Sort(myarray);
+
             return myarray;
+        }
+
+        // Manual sort
+        public static int[] ManualSort(int[] myarray)
+        {
+            for (int i = 0; i < myarray.Length - 1; i++)
+            {
+                int smallNumber = myarray[i];
+                int indexOfSmallNumber = i;
+
+                for(int j = i+1; j < myarray.Length; j++)
+                {
+                    if (myarray[j] < smallNumber)
+                    {
+                        smallNumber = myarray[j];
+                        indexOfSmallNumber = j;
+                    }
+                }
+
+                myarray[indexOfSmallNumber] = myarray[i];
+                myarray[i] = smallNumber;
+            }
+            return myarray;
+        }
+
+        // Fibonacii
+        public static long ManualFibonacii(int n)
+        {
+            long[] arrayOfFibonaciNumbers = new long[n];
+            arrayOfFibonaciNumbers[0] = 0;
+            arrayOfFibonaciNumbers[1] = 1;
+            for (int i = 2; i < n; i++)
+            {
+                arrayOfFibonaciNumbers[i] = arrayOfFibonaciNumbers[i - 1] + arrayOfFibonaciNumbers[i - 2];
+            }
+
+            return arrayOfFibonaciNumbers[arrayOfFibonaciNumbers.Length - 1];
         }
 
         public static int Fibonacii(int n)
