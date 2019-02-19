@@ -5,11 +5,11 @@ namespace ConsoleApp1
 {
     public enum Medals
     {
-        bronze=2,
-        gold=6,
+        bronze = 2,
+        gold = 6,
         silver,
         platinum
-       
+
     }
     class Program
     {
@@ -34,7 +34,7 @@ namespace ConsoleApp1
             Console.WriteLine(value: $"{b1} {b2}");
 
             byte by1 = 13, by2 = 255;
-            //byte by3 = by2 + 10;
+           // byte by3 = by2 + 10;
             Console.WriteLine(value: $"{by1} {by2}");
 
             by2++;//by 2+ 1
@@ -147,74 +147,119 @@ namespace ConsoleApp1
             }
             arl1.Add("hello");
             arl1.Add(4.5);
-            for(int i=0;i<arl1.Count;i++)
+            for (int i = 0; i < arl1.Count; i++)
             {
                 Console.WriteLine(arl1[i]);
             }
-            //homework 
-            //create a sort function with 1 param (arr). it should return an array.
-            //int[] unsortedArray = { 1,2,43, 4, 2, 7, 2 };
-            //int[] eateverArray = Mysort(unsortedArray);
-            //implement fibonacci iterative
+            //homework 1:
+            int[] unsortedArray = { 1,2,43, 4, 2, 7, 2 };
+            int[] wateverArray = MySort(unsortedArray);
+            for(int i = 0; i < unsortedArray.Length; i++)
+            {
+                Console.WriteLine(wateverArray[i]);
+            }
+
+            //homework2:
+            for (int i = 0; i < 11; i++)
+            {
+                int fiboResult2 = Fibonacci(i);
+                Console.WriteLine(value: $"{i}:n{fiboResult2}");
+            }
+
 
             int fiboResult = Fibonacci(5);
             Console.WriteLine(fiboResult);
 
-            for(int i = 0; i < 11; i++ )
+            for (int i = 0; i < 11; i++)
             {
-                int fiboResult1= Fibonacci(i);
-                Console.WriteLine(value:$"{i}:n{fiboResult1}");
+                int fiboResult1 = Fibonacci(i);
+                Console.WriteLine(value: $"{i}:n{fiboResult1}");
             }
 
+            Console.Read();
         }
+
         public static int Fibonacci(int n)
         {
-            if (n==0 || n==1)
+            if (n == 0 || n == 1)
             {
                 return 1;
             }
-            return Fibonacci(n = 1) + Fibonacci(n - 2);
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
+        }
+
+        public static int FibonacciIterativ(int n)
+        {
+            int a = 1, b = 1, c;
+            for (int i = 0; i < n+2; i++)
+            {
+                c = a + b;
+                a = b;
+                b = c;
+            }
+            return a;
         }
 
 
-        public static int AddTwoNubers (int a, int b)
+        public static int AddTwoNubers(int a, int b)
         {
             int calculatedVlues = 2 * a + b;
             return calculatedVlues;
         }
+
         public static int Sum(int n)
         {
-            if (n==0)
+            if (n == 0)
             {
                 return 0;
             }
             return n + Sum(n - 1);
         }
-        
+
 
         public static long Factorial(int n)
         {
-                if(n==0)
-                {
-                    return 1;
-                }
-                return n * Factorial(n-1);
+            if (n == 0)
+            {
+                return 1;
+            }
+            return n * Factorial(n - 1);
         }
-        public static long FactorialIterativ(int n )
+        public static long FactorialIterativ(int n)
         {
-            // n fact iterativ
-            return 0;
+            int factorial = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                factorial *= i;
+            }
+            return factorial;
         }
 
         public static int SumIterative(int n)
         {
             int finalValue = 0;
-            while (n>=0)
+            while (n >= 0)
             {
                 finalValue = finalValue + n;
                 n--;
             }
             return finalValue;
+        }
+        public static int[] MySort(int[] arr)
+        {
+            for(int i = 0; i < arr.Length-1; i++)
+            {
+                for(int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[j] < arr[i])
+                    {
+                        int aux = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = aux;
+                    }
+                }
+            }
+            return arr;
         }
     }
 }
