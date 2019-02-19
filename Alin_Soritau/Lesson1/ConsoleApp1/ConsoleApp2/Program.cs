@@ -44,6 +44,11 @@ namespace ConsoleApp2
             {
                 Console.WriteLine(student.Name);
             }
+            var hwStudentArray = CreateStudentsList(20, "HW");
+            foreach(Student s  in hwStudentArray)
+            {
+                Console.WriteLine(s.Name);
+            }
 
             Console.Read();
         }
@@ -57,6 +62,19 @@ namespace ConsoleApp2
                 int j = i + 1;
                 student.Name = "Alin" + j;
                 students[i] = student;
+            }
+            return students;
+        }
+
+        public static ArrayList CreateStudentsList (int numberOfStudents, string prefix)
+        {
+            ArrayList students = new ArrayList();
+            for (int i = 0; i < numberOfStudents; i++)
+            {
+                Student student = new Student();
+                int j = i + 1;
+                student.Name = prefix + "-Alin-" + j;
+                students.Add(student);
             }
             return students;
         }

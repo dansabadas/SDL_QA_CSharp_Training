@@ -148,23 +148,60 @@ namespace ConsoleApp1
             }
 
             // HOMEWORK
-            // 1. Homework: 1. given any array as input, produce as output the sorted array
+            // DONE 1. Homework: 1. given any array as input, produce as output the sorted array
             // (do nout use build-in functions like Array.Sort() but create your own sorting implementation
-            // 2. Implement Fibonacci function iterative
+            // DONE 2. Implement Fibonacci function iterative
+            /* DONE 3: Create a function called CreateStudents2 that returns an ArrayList with students (as a source of inspiration use the existing 
+              public static Student[] CreateStudents(int numberOfStudents)just that instead of an array of students the function CreateStudents2 
+              should return an ArrayList populated with the students.
+              */
             int[] unsortedRawArray = { 3, 2, 1, 45, 0 };
             int[] whaterverArray = MySort(unsortedRawArray);
 
 
             int fiboResult = Fibonacci(5);
             Console.WriteLine(fiboResult);
+            Console.WriteLine(FibonacciIterative(5));
 
             Console.Read();
         }
 
-        public static int[] MySort(int[] a)
+        public static int[] MySort(int[] n)
         {
+            //int smallest = n[0];
+            int largest = n[0];
+            int previous;
 
-            return new int[0];
+            int[] sorted = new int[n.Length];
+            for (int i = 0; i < n.Length; i++)
+            {
+                if (n[i] > largest)
+                    largest = n[i];
+                else
+                    continue;
+            }
+            //for (int i = 0; i < n.Length; i++)
+            //{
+            //    if (n[i] < smallest)
+            //        smallest = n[i];
+            //    else
+            //        continue;
+            //}
+            //sorted[0] = smallest;            
+            int j = 0;
+            sorted[n.Length - 1] = largest;
+            previous = largest;
+            for ( int i = n.Length - 1; i > 0; i--)
+            {
+                if (n[j] < largest || n[j] < previous)
+                {
+                    sorted[i - 1] = n[j];
+                    j++;
+                }
+                else
+                    continue;
+            }
+            return sorted;
         }
 
         public static int AddTwoNumbers(int a, int b)
@@ -209,7 +246,8 @@ namespace ConsoleApp1
                 return 1;
             while (n > 0)
             {
-                result = n * (n - 1);
+                result += n * (n - 1);
+                n--;
             }
             return result;
         }
@@ -224,6 +262,23 @@ namespace ConsoleApp1
             if (n == 0 || n == 1)
                 return 1;
             return Fibonacci(n - 1) + Fibonacci(n - 2);
+        }
+
+        public static int FibonacciIterative(int n)
+        {
+            if(n <= 1)
+            {
+                return 1;
+            }
+            int fibonacci = 1;
+            int previousFibonacci = 1;
+            for (int i = 2; i < n; i++)
+            {
+                int temp = fibonacci;
+                fibonacci += previousFibonacci;
+                previousFibonacci += temp;
+            }
+            return fibonacci;
         }
     }
 }
