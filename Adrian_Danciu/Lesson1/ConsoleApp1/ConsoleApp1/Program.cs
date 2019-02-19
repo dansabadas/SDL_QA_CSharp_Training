@@ -164,25 +164,15 @@ namespace ConsoleApp1
             //int[] unsortedRawArray = { 3, 2, 1, 45, 0 };
             //int[] orice = MySort();
 
-            //int fiboResult = Fibonacci(5);
-            //Console.WriteLine(fiboResult);
+            int fiboResult = Fibonacci(5);
+            Console.WriteLine(fiboResult);
 
-            //for (int i = 0; i < 11; i++)
-            //{
-            //    int fiboResult1 = Fibonacci(i);
-            //    Console.WriteLine($"{i}: {fiboResult1}");
-            //}
+            for (int i = 0; i < 11; i++)
+            {
+                int fiboResult1 = Fibonacci(i);
+                Console.WriteLine($"{i}: {fiboResult1}");
+            }
 
-            //public static int Fibonacci (int n)
-            //{
-
-            //    if ((n == 0) || (n == 1))
-            //    {
-            //        return 1;
-            //    }
-                
-            //    return Fibonacci(n - 1) + Fibonacci(n - 2);
-            //}
 
 
             //public static int[] MySort(int[] a)
@@ -191,6 +181,18 @@ namespace ConsoleApp1
             //}
 
         }
+
+        public static int Fibonacci(int n)
+        {
+
+            if ((n == 0) || (n == 1))
+            {
+                return 1;
+            }
+
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
+        }
+
 
         public static int AddTwoNumbers(int a, int b)
         {
