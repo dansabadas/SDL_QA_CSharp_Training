@@ -8,7 +8,7 @@ using System.Collections;
 namespace ConsoleApp2
 {
 
-    class Student
+    public class Student
     {
         public int Id;
         public double Average;

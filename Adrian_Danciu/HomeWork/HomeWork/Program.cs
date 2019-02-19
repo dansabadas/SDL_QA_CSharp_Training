@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConsoleApp2;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +28,19 @@ namespace HomeWork
             int fiboResult = Fibonacci(5);
 
             Console.WriteLine(fiboResult);
-                                        
+
+            //Homework 3: Create a function called CreateStudents2 that returns an ArrayList with students
+            //(as a source of inspiration use the existing public static Student[] CreateStudents
+            //(int numberOfStudents) just that instead of an array of students the function CreateStudents2 
+            //should return an ArrayList populated with the students.
+
+            ArrayList s1 = CreateStudents2(100);
+            for (int i=0; i<s1.Count; i++)
+            {
+                Student s = (Student)s1[i];
+                Console.WriteLine(s.Name);
+            }
+                       
         }
 
         public static int[] MySort (int[] unsorted)
@@ -70,6 +84,22 @@ namespace HomeWork
                 i++;
             }
             return currentValue;
+        }
+
+        public static ArrayList CreateStudents2 (int numberOfStudents)
+        {
+
+            ArrayList students = new ArrayList();
+         
+            for (int i = 0; i<100; i++)
+            {
+                Student student = new Student();
+                student.Name = "Ady" + i;
+                //student.DateOfBirth = new DateTime(2010, 10, 01);
+                students.Add(student);
+            }
+
+            return students;
         }
 
     }
