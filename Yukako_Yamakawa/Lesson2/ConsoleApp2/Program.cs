@@ -49,6 +49,14 @@ namespace ConsoleApp2
             {
                 Console.WriteLine(currentStudent.Name);
             }
+
+            //HOMEWORK03: ArrayList for CreateStudent2
+            ArrayList myStudentArray2 = CreateStudents2(20);
+            foreach (Student students2 in myStudentArray2)
+            {
+                Console.WriteLine(students2.Name);
+            }
+            //HOMEWORK03: ArrayList for CreateStudent2
         }
 
         public static Student[] CreateStudents(int numberOfStudents)
@@ -61,26 +69,39 @@ namespace ConsoleApp2
                 student.Name = "Yukako" + i;
                 returnArray[i] = student;
             }
-            
-                return returnArray;
+            return returnArray;
         }
 
-        //Homework 3: Create a function called CreateStudents2 that returns an ArrayList with students
+        //HOMEWORK03: Create a function called CreateStudents2 that returns an ArrayList with students
         //(as a source of inspiration use the existing public static Student[] CreateStudents(int numberOfStudents)
         //just that instead of an array of students the function CreateStudents2 should return an ArrayList populated with the students.
-        public static Student[] CreateStudents2(string nameOfStudents)
-        {    
+
+        //NOTE FROM YY: I realise that running the following function will only return the same results as "CreateStudents".
+        //I am afraid I could not find out the way to make the following function to return as an ArrayList. 
+        //Would you possibly advise me how this could be differenciated from CreateStudents? 
+        //Is it possible to use "string" instead of "int" value? 
+        //If so, can it be resolved with the following method as follows?
+        /*
+         public static Student[] CreateStudents2(string nameOfStudents)
+        { 
             ArrayList arrayOfStudents = new ArrayList();
             arrayOfStudents.Add("Andy");
             arrayOfStudents.Add("Bob");
             string stud = (string)arrayOfStudents[0];
 
             return CreateStudents2(nameOfStudents);
-           
+         }
+        */
+        public static ArrayList CreateStudents2(int numberOfStudents)
+        {
+            ArrayList arrayOfStudents = new ArrayList();
+            for (int i = 0; i < numberOfStudents; i++)
+            {
+                Student student2 = new Student();
+                student2.Name = "Yukako" + i;
+                arrayOfStudents.Add(student2);
+            }
+            return arrayOfStudents;
         }
-        
-
-
-
     }
 }
