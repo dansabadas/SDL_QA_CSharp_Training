@@ -61,8 +61,26 @@ namespace ConsoleApp2
                 student.Name = "Yukako" + i;
                 returnArray[i] = student;
             }
-             //...
+            
                 return returnArray;
         }
+
+        //Homework 3: Create a function called CreateStudents2 that returns an ArrayList with students
+        //(as a source of inspiration use the existing public static Student[] CreateStudents(int numberOfStudents)
+        //just that instead of an array of students the function CreateStudents2 should return an ArrayList populated with the students.
+        public static Student[] CreateStudents2(string nameOfStudents)
+        {    
+            ArrayList arrayOfStudents = new ArrayList();
+            arrayOfStudents.Add("Andy");
+            arrayOfStudents.Add("Bob");
+            string stud = (string)arrayOfStudents[0];
+
+            return CreateStudents2(nameOfStudents);
+           
+        }
+        
+
+
+
     }
 }

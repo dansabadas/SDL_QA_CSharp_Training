@@ -89,13 +89,13 @@ namespace ConsoleApp1
                 Console.WriteLine(value: $"{ii3} is even");
             }
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 50; i++)
             {
                 Console.WriteLine(value: $"i={i}");  //iterations for the value
             }
 
             int j = 0;
-            while (j < 1000) //up to the number put after <
+            while (j < 50) //up to the number put after <
             {
                 Console.WriteLine(value: $"j: {j}");  //iteration for the value
                 j++;
@@ -135,7 +135,7 @@ namespace ConsoleApp1
             Console.WriteLine(result6);
 
             int[] intArr1 = new int[10];
-            int[] intArr2 = new int[5] { 1, 2, 4, 8, 11};
+            int[] intArr2 = new int[5] { 1, 2, 4, 8, 11 };
             int[] intArr3 = { 1, 2, 4, 8, 11 };
             for (int i = 0; i < intArr2.Length; i++)
             {
@@ -165,11 +165,23 @@ namespace ConsoleApp1
                 Console.WriteLine(arl1[i]);
             }
 
-            //homework01
-            // given any array as input, produce as output the sorted array (do not use build-in functions like Array.Sort, but create your own)
-            //int[] unsortedRawArray = { 3, 2, 1, 45 };
-            // whateverArray = MySort(unsortedRawArray);
-
+            //HOMEWORK 01
+            // given any array as input, produce as output the sorted array (WITHOUT using build-in functions such as 'Array.Sort')            
+            int[] unsortedRawArray = new int[] { 3, 2, 1, 45 };
+            int MySort = 0;
+            for (int i = 0; i < unsortedRawArray.Length; i++)
+             {
+                 for (int h = i + 1; h < unsortedRawArray.Length; h++)
+                 {
+                        if (unsortedRawArray[i] > unsortedRawArray[h])
+                        {
+                            MySort = unsortedRawArray[h];
+                            unsortedRawArray[h] = unsortedRawArray[i];
+                            unsortedRawArray[i] = MySort;
+                        }
+                  }
+                    Console.WriteLine(unsortedRawArray[i]);
+             }
             int fiboResult = Fibonacci(n: 5);
             Console.WriteLine(fiboResult);
 
@@ -180,26 +192,29 @@ namespace ConsoleApp1
             }
         }
 
-        
+
 
         public static int Fibonacci(int n)
+        /* Recursive Fibonacci implementation by Dan
         {
             if (n == 0 || n == 1)
             {
                 return 1;
             }
             return Fibonacci(n: n - 1) + Fibonacci(n: n - 2);
+        } 
+        */
 
+
+        //HOMEWORK 02: Iterative Fibonacci implementation
+        {
+            while (n <= 1)
+            {
+                return 1;
+            }
+            return Fibonacci(n: n - 1) + Fibonacci(n: n - 2);
         }
 
-        //homework02: make Fibonacci iterative to process faster and less 
-        //public static int MySort(int[] a)
-        //{
-            //...
-
-        //    return new int[0];
-
-        //}
 
         public static int AddTwoNumbers(int a, int b)
         {
