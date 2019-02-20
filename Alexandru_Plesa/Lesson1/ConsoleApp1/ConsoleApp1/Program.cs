@@ -145,59 +145,9 @@ namespace ConsoleApp1
 
             Console.WriteLine($"Fibonaci {Fibonacii(10)}");
 
-            #region Homework
-
-            int[] unsortedValues = new int[] { 20, 5, 3, 4, 0, 99, -1, 0 };
-
-            foreach (int number in unsortedValues)
-            {
-                Console.WriteLine(number);
-            }
-
-            int[] nr = ManualSort(unsortedValues);
-
-            Console.WriteLine($"Fibonaci manualy calculated with array {ManualFibonacii(10)}");
-            Console.WriteLine($"Fibonaci manualy calculated with addition {ManualFibonacii2(10)}");
-            
-            
-
-            #endregion
-
             Console.ReadLine();
         }
        
-        #region Fibonacii methods
-        // Fibonacii
-        public static long ManualFibonacii(int n)
-        {
-            long[] arrayOfFibonaciNumbers = new long[n];
-            arrayOfFibonaciNumbers[0] = 0;
-            arrayOfFibonaciNumbers[1] = 1;
-            for (int i = 2; i < n; i++)
-            {
-                arrayOfFibonaciNumbers[i] = arrayOfFibonaciNumbers[i - 1] + arrayOfFibonaciNumbers[i - 2];
-            }
-
-            return arrayOfFibonaciNumbers[arrayOfFibonaciNumbers.Length - 1];
-        }
-
-        public static long ManualFibonacii2(int n)
-        {
-            long smallValue = 0;
-            long largeValue = 1;
-            long result = 0;
-
-            for (var i = 0; i < n - 2; i++)
-            {
-                result = largeValue + smallValue;
-                smallValue = largeValue;
-                largeValue = result;
-                
-            }
-
-            return result;
-        }
-
         public static int Fibonacii(int n)
         {
 
@@ -207,44 +157,6 @@ namespace ConsoleApp1
             }
             return  Fibonacii(n - 1) + Fibonacii(n - 2);
         }
-
-        #endregion
-
-        #region Sort Methods
-
-        public static int[] MySort(int[] myarray)
-        {
-            Array.Sort(myarray);
-
-            return myarray;
-        }
-
-        // Manual sort
-        public static int[] ManualSort(int[] myarray)
-        {
-            for (int i = 0; i < myarray.Length - 1; i++)
-            {
-                int smallNumber = myarray[i];
-                int indexOfSmallNumber = i;
-
-                for (int j = i + 1; j < myarray.Length; j++)
-                {
-                    if (myarray[j] < smallNumber)
-                    {
-                        smallNumber = myarray[j];
-                        indexOfSmallNumber = j;
-                    }
-                }
-
-                myarray[indexOfSmallNumber] = myarray[i];
-                myarray[i] = smallNumber;
-            }
-            return myarray;
-        }
-
-        #endregion
-
-        #region Sum methods
 
         public static int Sum(int n)
         {
@@ -300,8 +212,6 @@ namespace ConsoleApp1
             int result = a + b;
             return result;
         }
-
-        #endregion
 
     }
 
