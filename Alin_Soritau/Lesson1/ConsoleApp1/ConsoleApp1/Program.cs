@@ -156,7 +156,11 @@ namespace ConsoleApp1
               should return an ArrayList populated with the students.
               */
             int[] unsortedRawArray = { 3, 2, 1, 45, 0 };
+            int[] testArray = { 2, 3, 5, 10, 10, 2, 1 };
+            testArray = MySort(testArray);
+            int[] secondUnsortedArray = { 7, 3, 5, 6, 0, 10, 4, 6, 0, 34954, 456, 100, 254, 43534, 4554, 665, 44, 0, -4, 5, 66, 666 };
             int[] whaterverArray = MySort(unsortedRawArray);
+            int[] sortedArray = MySort(secondUnsortedArray);
 
 
             int fiboResult = Fibonacci(5);
@@ -168,9 +172,9 @@ namespace ConsoleApp1
 
         public static int[] MySort(int[] n)
         {
-            //int smallest = n[0];
             int largest = n[0];
             int previous;
+            int valueOccurance = 0;
 
             int[] sorted = new int[n.Length];
             for (int i = 0; i < n.Length; i++)
@@ -180,26 +184,14 @@ namespace ConsoleApp1
                 else
                     continue;
             }
-            //for (int i = 0; i < n.Length; i++)
-            //{
-            //    if (n[i] < smallest)
-            //        smallest = n[i];
-            //    else
-            //        continue;
-            //}
-            //sorted[0] = smallest;            
-            int j = 0;
-            sorted[n.Length - 1] = largest;
             previous = largest;
-            for ( int i = n.Length - 1; i > 0; i--)
+            // determine the number of times a value occurs in the input array
+            for (int i = 0; i < n.Length; i++)
             {
-                if (n[j] < largest || n[j] < previous)
+                if (n[i] == previous)
                 {
-                    sorted[i - 1] = n[j];
-                    j++;
+                    valueOccurance++;
                 }
-                else
-                    continue;
             }
             return sorted;
         }
