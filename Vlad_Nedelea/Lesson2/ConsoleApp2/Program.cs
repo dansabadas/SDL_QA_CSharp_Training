@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    class Student
+    public class Student
     {
         public int Id;
         public double Average;
@@ -16,7 +16,7 @@ namespace ConsoleApp2
 
     }
 
-    class Program
+     public class Program
     {
         static void Main(string[] args)
         {
