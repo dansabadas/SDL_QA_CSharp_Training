@@ -11,11 +11,10 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("introduceti un numar pentru care sa afisam sirul fibonacci: ");
-            var n = Console.Read();
-            Console.WriteLine("rezultate");
+            int n = Convert.ToInt16(Console.ReadLine());
             FibonacciIterativ(n);
-
-        }
+            Console.ReadKey();
+            }
 
         public static int FibonacciIterativ(int fib)
         {
@@ -24,8 +23,9 @@ namespace ConsoleApp1
             int n2 = 1;
             suma = n1 + n2;
             Console.WriteLine("rezultate");
-            Console.WriteLine($"0 1 {suma}", suma);
-           
+            Console.WriteLine($"0");
+            Console.WriteLine($"1 ");
+
             for (int i = 2; i <= fib; i++)
             {
                 suma = n1 + n2;
