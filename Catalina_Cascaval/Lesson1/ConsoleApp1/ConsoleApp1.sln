@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibbonaciItterative", "Fibb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortArray", "SortArray\SortArray.csproj", "{1AACE631-1D1D-4A98-9949-A6A50D5CF60C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateStudentsII", "CreateStudentsII\CreateStudentsII.csproj", "{9CA42126-4C67-436E-8893-0779F1CF4EE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1AACE631-1D1D-4A98-9949-A6A50D5CF60C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AACE631-1D1D-4A98-9949-A6A50D5CF60C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AACE631-1D1D-4A98-9949-A6A50D5CF60C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA42126-4C67-436E-8893-0779F1CF4EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA42126-4C67-436E-8893-0779F1CF4EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA42126-4C67-436E-8893-0779F1CF4EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA42126-4C67-436E-8893-0779F1CF4EE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
