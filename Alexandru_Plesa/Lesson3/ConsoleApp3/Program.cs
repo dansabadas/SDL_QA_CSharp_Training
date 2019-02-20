@@ -68,23 +68,19 @@ namespace ConsoleApp3
     }
 
 
-    public class point2D
+    public class Point2D
     {
         protected double _x;
         protected double _y;
 
         public double X
         {
-            get { return _x; }
+            get => _x;
             set => _x = value;
         }
-
-          
-
-
         public double Y
         {
-            get { return _y; }
+            get => _y;
             set
             {
                 if (value < 0)
@@ -98,7 +94,7 @@ namespace ConsoleApp3
             }
         }
 
-        public point2D(double x, double y)
+        public Point2D(double x, double y)
         {
             _x = x;
             _y = y;
@@ -111,29 +107,19 @@ namespace ConsoleApp3
 
 
     }
-    public class Point3D : point2D, iGeometryFactory
+    public class Point3D : Point2D
     {
         protected double _z;
+
+        public double Z
+        {
+            get => _z;
+            set => _z = value;
+        }
+
         public Point3D(double x, double y, double z) : base(x, y)
         {
-            double _x = x;
-            double _y = y;
-            double _z = z;
-        }
-
-        public ArrayList GetMyPoints(int points)
-        {
-            throw new NotImplementedException();
-        }
-
-        public point2D GetRandomPoint(int maxX, int maxY)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Point3D GetRandomPoint(int maxX, int maxY, int maxZ)
-        {
-            throw new NotImplementedException();
+            _z = z;
         }
 
         public override string ToString()
@@ -145,15 +131,15 @@ namespace ConsoleApp3
     public interface iGeometryFactory
     {
         ArrayList GetMyPoints(int points);
-        point2D GetRandomPoint(int maxX, int maxY);
-
+        Point2D GetRandomPoint(int maxX, int maxY);
         Point3D GetRandomPoint(int maxX, int maxY, int maxZ);
 
     }
 
-    public class ImplementGeometryFactory : iGeometryFactory
+    public class GeometryFactory : iGeometryFactory
     {
         Random rnd = new Random();
+
         public ArrayList GetMyPoints(int points)
         {
             
@@ -161,7 +147,7 @@ namespace ConsoleApp3
 
             for (int i = 0; i < points; i++)
             {
-                point2D point2D = new point2D(rnd.Next(0, points), rnd.Next(0, points));
+                Point2D point2D = new Point2D(rnd.Next(0, points), rnd.Next(0, points));
 
                 arrayList.Add(point2D);
 
@@ -169,9 +155,9 @@ namespace ConsoleApp3
             return arrayList;
         }
 
-        public point2D GetRandomPoint(int maxX, int maxY)
+        public Point2D GetRandomPoint(int maxX, int maxY)
         {
-            point2D point = new point2D(rnd.NextDouble() * maxX, rnd.NextDouble() * maxY);
+            Point2D point = new Point2D(rnd.NextDouble() * maxX, rnd.NextDouble() * maxY);
 
             return point;
 
@@ -179,7 +165,9 @@ namespace ConsoleApp3
 
         public Point3D GetRandomPoint(int maxX, int maxY, int maxZ)
         {
-            throw new NotImplementedException();
+            Point3D point = new Point3D(rnd.NextDouble() * maxX, rnd.NextDouble() * maxY, rnd.NextDouble() * maxZ);
+
+            return point;
         }
     }
 
@@ -207,18 +195,19 @@ namespace ConsoleApp3
                 Console.WriteLine($"Student {stud.Name} has the ID {stud.ID} and was born {stud.DateOfBirth}");
             }
 
-            iGeometryFactory randomPoints = new ImplementGeometryFactory();
+            iGeometryFactory randomPoints = new GeometryFactory();
             ArrayList points = randomPoints.GetMyPoints(20);
             
-            foreach (point2D pnt in points)
+            foreach (Point2D pnt in points)
             {  
                 Console.WriteLine(pnt.ToString());
             }
 
-            point2D point = randomPoints.GetRandomPoint(10, 10);
-            Console.WriteLine(point.ToString());
-
-            Point3D point3D = randomPoints.GetRandomPoint
+            Point2D point2D = randomPoints.GetRandomPoint(10, 10);
+            Point3D point3D = randomPoints.GetRandomPoint(10, 10, 10);
+            
+            Console.WriteLine(point2D.ToString());
+            Console.WriteLine(point3D);
 
             Console.ReadLine();
             
