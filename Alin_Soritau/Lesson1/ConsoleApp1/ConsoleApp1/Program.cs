@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -156,12 +158,21 @@ namespace ConsoleApp1
               should return an ArrayList populated with the students.
               */
             int[] unsortedRawArray = { 3, 2, 1, 45, 0 };
-            int[] testArray = { 2, 3, 5, 10, 10, 2, 1 };
+            int[] testArray = { 2, 3, 10, 5, 10, 10, 2, 1 };
             testArray = MySort(testArray);
             int[] secondUnsortedArray = { 7, 3, 5, 6, 0, 10, 4, 6, 0, 34954, 456, 100, 254, 43534, 4554, 665, 44, 0, -4, 5, 66, 666 };
             int[] whaterverArray = MySort(unsortedRawArray);
             int[] sortedArray = MySort(secondUnsortedArray);
-
+            Console.WriteLine("");
+            foreach (int number in whaterverArray)
+            {
+                Console.Write($"{number}; ");
+            }
+            Console.WriteLine("");
+            foreach (int number in sortedArray)
+            {
+                Console.Write($"{number}; ");
+            }
 
             int fiboResult = Fibonacci(5);
             Console.WriteLine(fiboResult);
@@ -172,27 +183,59 @@ namespace ConsoleApp1
 
         public static int[] MySort(int[] n)
         {
-            int largest = n[0];
-            int previous;
-            int valueOccurance = 0;
+            int largest;
+            int[] valueOccurance;
+            List<int> nList = new List<int>();
+            List<int> sortedList = new List<int>();
 
-            int[] sorted = new int[n.Length];
             for (int i = 0; i < n.Length; i++)
             {
-                if (n[i] > largest)
-                    largest = n[i];
-                else
-                    continue;
+                nList.Add(n[i]);
             }
-            previous = largest;
-            // determine the number of times a value occurs in the input array
-            for (int i = 0; i < n.Length; i++)
+
+            int FindLargest (List<int> numberList)
             {
-                if (n[i] == previous)
+                int largestInList = numberList[0];
+                for (int i = 0; i < numberList.Count; i++)
                 {
-                    valueOccurance++;
+                    if (numberList[i] > largestInList)
+                    {
+                        largestInList = numberList[i];
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                return largestInList;
+            }
+
+            int[] FindLargestOccurance(int largestNumber, List<int> numberList)
+            {
+                List<int> positions = new List<int>();
+                for (int i = 0; i < numberList.Count; i++)
+                {
+                    if (numberList[i] == largestNumber)
+                    {
+                        positions.Add(i);
+                    }
+                }
+                return positions.ToArray();
+            }
+
+            largest = FindLargest(nList);
+            while (nList.Count > 0)
+            {
+                largest = FindLargest(nList);
+                valueOccurance = FindLargestOccurance(largest, nList);
+                for(int i = 0; i < valueOccurance.Length; i++)
+                {
+                    sortedList.Add(largest);
+                    nList.Remove(largest);
                 }
             }
+
+            int[] sorted = sortedList.ToArray();
             return sorted;
         }
 
