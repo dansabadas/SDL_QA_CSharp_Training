@@ -63,7 +63,12 @@ namespace ConsoleApp3
 
     public class Point3D : Point2D
     {
-        private double _z;
+        protected double _z { get; set;  }
+        public double Z
+        {
+            get { return _z; }
+            set { }
+        }
         public Point3D(double x, double y, double z) : base(x, y)
         {
             _z = z;
@@ -85,20 +90,21 @@ namespace ConsoleApp3
             get { return _x; }
             set
             {
-                if ( value < 0)
-                {
-                    _x = -value;
-                }
-                else
-                {
-                    _x =  value + 10;
-                }
+                //if ( value < 0)
+                //{
+                //    _x = -value;
+                //}
+                //else
+                //{
+                //    _x =  value + 10;
+                //}
             }
         }
 
-        public double y
+        public double Y
         {
             get { return _y; }
+            set { }
         }
 
         public Point2D(double x, double y)
@@ -119,6 +125,8 @@ namespace ConsoleApp3
         ArrayList GetMyPoints();
         Point2D GetRandomPoint(int maxX, int maxY);
         Point3D GetRandomPoint3D();
+        double GetDistanceBetweenTwoPoints2D(Point2D pointOne, Point2D pointTwo);
+        double GetDistanceBetweenTwoPoints3D(Point3D pointOne, Point3D pointTwo);
     }
 
     public class GeometryFactory : IGeometryFactory
@@ -148,10 +156,26 @@ namespace ConsoleApp3
             }
             return points;
         }
+
+        public double GetDistanceBetweenTwoPoints2D (Point2D pointOne, Point2D pointTwo)
+            // This method uses the Pythagorean theorem to calculate the distance between 2 Point2D 
+        {
+            double distance;
+            double legA = pointOne.X - pointTwo.X;
+            double legB = pointOne.Y - pointTwo.Y;
+            distance = Math.Sqrt(Math.Pow(legA, 2) + Math.Pow(legB, 2));
+            return distance;
+        }
+
+        public double GetDistanceBetweenTwoPoints3D(Point3D pointOne, Point3D pointTwo)
+        {
+            double distance = Math.Sqrt(Math.Pow((pointOne.X - pointTwo.X), 2) + Math.Pow((pointOne.Y - pointTwo.Y), 2) + Math.Pow((pointOne.Z - pointTwo.Z), 2));
+            return distance;
+        }
     }
 
 
-    class Program
+    class Lesson3
     {
         static void Main(string[] args)
         {
@@ -185,6 +209,13 @@ namespace ConsoleApp3
             Point3D p3d = geometryFactory.GetRandomPoint3D();
             Console.WriteLine(p3d.ToString());
             Console.WriteLine(p3d);
+
+            Console.WriteLine(geometryFactory.GetDistanceBetweenTwoPoints2D(new Point2D(1, 3), new Point2D(2, -1)));
+
+            Console.WriteLine(geometryFactory.GetDistanceBetweenTwoPoints3D(new Point3D(1, 3, 5), new Point3D(1, 3, 9)));
+            Console.WriteLine(geometryFactory.GetDistanceBetweenTwoPoints3D(new Point3D(1, 15, 5), new Point3D(1, 3, 5)));
+            Console.WriteLine(geometryFactory.GetDistanceBetweenTwoPoints3D(new Point3D(1, 3, 5), new Point3D(-4, 3, 5)));
+            Console.WriteLine(geometryFactory.GetDistanceBetweenTwoPoints3D(new Point3D(-1, -3, -5), new Point3D(1, 3, 5)));
 
             Console.Read();
         }
