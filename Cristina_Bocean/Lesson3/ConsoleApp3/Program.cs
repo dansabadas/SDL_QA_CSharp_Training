@@ -59,7 +59,7 @@ namespace ConsoleApp3
 
     public class point2D
     {
-        protected double _x;
+        protected double _x; //changed the access modifier from private to protected to be able to access it in the derived class - point3D
         protected double _y;
 
         public double X
@@ -77,18 +77,8 @@ namespace ConsoleApp3
             }
         }
        
-       // public double Y => _y;
-        public double Y
-        {
-            get
-            {
-                return _y;
-            }
-            set
-            {
-                _y = value;
-            }
-        }
+        public double Y => _y;
+       
         public point2D(double x, double y)
         {
             _x = x;
@@ -140,7 +130,7 @@ namespace ConsoleApp3
             {
                 Random r = new Random();
 
-                point2D coord = new point2D(r.NextDouble() * 10, r.NextDouble() * 10);
+                point2D coord = new point2D(r.NextDouble()*10, r.NextDouble() * 10);
 
                 myList.Add(coord);
             }
@@ -157,7 +147,7 @@ namespace ConsoleApp3
         public Point3D GetRandomPoint(int maxX, int maxY, int maxZ)
         {
             Random r = new Random();
-            Point3D coord = new Point3D(r.NextDouble() * maxX, r.NextDouble() * maxY, r.NextDouble());
+            Point3D coord = new Point3D(r.NextDouble() * maxX, r.NextDouble() * maxY, r.NextDouble()*maxZ);
             return coord;
         }
     }
@@ -169,8 +159,8 @@ namespace ConsoleApp3
             Console.WriteLine("Hello, Cris!");
 
             IStudentRepository sr = new StudentRepository();
-            //you can see only the members from interface => nameOfRepository is not visible in sr.
-
+            //you can see only the members from interface => nameOfRepository is not visible when using the dot notation on sr (sr.)
+            
             ArrayList myList = sr.CreateAllStudents2();
             foreach (Student st in myList)
             {
@@ -185,21 +175,23 @@ namespace ConsoleApp3
                 Console.WriteLine($"({point.X}, {point.Y})");
             }
 
-            var point2DList = myFactoryPoint.GetRandomPoint(2, 3);
+            var first2D = myFactoryPoint.GetRandomPoint(2, 3);
 
-            //Console.WriteLine($"({point2DList.X}, {point2DList.Y})");
-            Console.WriteLine(point2DList.ToString());
-            // point2DList.Y = 1000;
-            point2D p = new point2D(10, 20);
-            p.X = -30;
-            Console.WriteLine(p.X);
-            p.X = 100;
-            Console.WriteLine(p.X);
-            Point3D p3 = new Point3D(10, 20, 30);
-            Console.WriteLine($"{p3.X},{p3.Y},{p3.Z}");
-            var myPoint3 = myFactoryPoint.GetRandomPoint(100,200,300);
-            Console.WriteLine($"{myPoint3.ToString()}");
-            Console.WriteLine($"{myPoint3}");
+            Console.WriteLine($"({first2D.X}, {first2D.Y})");
+
+            Console.WriteLine(first2D.ToString());
+
+            // first2D.Y = 1000; cannot assign a value because the property declared like this "public double Y => _y;" is read-only 
+            point2D second2D = new point2D(10, 20);
+            second2D.X = -30;
+            Console.WriteLine(second2D.X);     // 30
+            second2D.X = 50;                   // 30+10
+            Console.WriteLine(second2D.X);
+            Point3D third2D = new Point3D(10, 20, 30);
+            Console.WriteLine($"{third2D.X},{third2D.Y},{third2D.Z}");
+            var first3D = myFactoryPoint.GetRandomPoint(100,200,300);
+            Console.WriteLine($"{first3D.ToString()}");
+            Console.WriteLine($"{first3D}");
         }
     }
 }
