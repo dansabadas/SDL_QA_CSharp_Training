@@ -57,15 +57,8 @@ namespace ConsoleApp3
 
         public double CalculateDistance(Point3D point3D)
         {
-            double result = (point3D.X - point3D.Y - point3D.Z - point3D.X) * -1;
-            if (result < 0)
-            {
-                return result * -1;
-            }
-            else
-            {
-                return result;
-            }
+            double result = ((point3D.X - point3D.Y) + (point3D.Y - point3D.Z) + (point3D.Z - point3D.X)) * -1;
+            return result * -1;
         }
     }
 }

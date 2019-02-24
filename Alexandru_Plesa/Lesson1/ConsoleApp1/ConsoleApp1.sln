@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework", "Homework\Homewo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3", "..\..\Lesson3\ConsoleApp3\ConsoleApp3.csproj", "{9DFAA4BF-4EDD-4EB1-8B79-F3FB432581AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2_TheAnimalFarm", "..\..\Homework2_TheAnimalFarm\Homework2_TheAnimalFarm\Homework2_TheAnimalFarm.csproj", "{816B3E80-C970-4814-A4EA-5050CF48E3EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9DFAA4BF-4EDD-4EB1-8B79-F3FB432581AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DFAA4BF-4EDD-4EB1-8B79-F3FB432581AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DFAA4BF-4EDD-4EB1-8B79-F3FB432581AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816B3E80-C970-4814-A4EA-5050CF48E3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816B3E80-C970-4814-A4EA-5050CF48E3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816B3E80-C970-4814-A4EA-5050CF48E3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816B3E80-C970-4814-A4EA-5050CF48E3EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
