@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3", "..\..\Lesson
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2_TheAnimalFarm", "..\..\Homework2_TheAnimalFarm\Homework2_TheAnimalFarm\Homework2_TheAnimalFarm.csproj", "{816B3E80-C970-4814-A4EA-5050CF48E3EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2_TheAnimalFarm_WPF", "..\..\Homework2_TheAnimalFarm_WPF\Homework2_TheAnimalFarm_WPF\Homework2_TheAnimalFarm_WPF.csproj", "{E4B7FB85-F6E7-4F52-8A14-ED177B6D7D0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{816B3E80-C970-4814-A4EA-5050CF48E3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{816B3E80-C970-4814-A4EA-5050CF48E3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{816B3E80-C970-4814-A4EA-5050CF48E3EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4B7FB85-F6E7-4F52-8A14-ED177B6D7D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B7FB85-F6E7-4F52-8A14-ED177B6D7D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B7FB85-F6E7-4F52-8A14-ED177B6D7D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B7FB85-F6E7-4F52-8A14-ED177B6D7D0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
