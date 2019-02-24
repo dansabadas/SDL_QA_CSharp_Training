@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2_FibonacciIterativ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_StudentsArrayList", "Homework3_StudentsArrayList\Homework3_StudentsArrayList.csproj", "{6E61AC7A-2C01-4CEA-9423-D39D70B5CCDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalFarm_Homework", "AnimalFarm_Homework\AnimalFarm_Homework.csproj", "{DC6ADF57-56E2-42FB-993C-5610EDA179E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6E61AC7A-2C01-4CEA-9423-D39D70B5CCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E61AC7A-2C01-4CEA-9423-D39D70B5CCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E61AC7A-2C01-4CEA-9423-D39D70B5CCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6ADF57-56E2-42FB-993C-5610EDA179E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6ADF57-56E2-42FB-993C-5610EDA179E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6ADF57-56E2-42FB-993C-5610EDA179E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6ADF57-56E2-42FB-993C-5610EDA179E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
