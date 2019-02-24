@@ -26,13 +26,31 @@ namespace Homework_ex1
             double distance = Math.Sqrt((a - _x) * (a - _x) + (b - _y) * (b - _y));
             return distance;
         }
+
+        public class point3D : point2D
+        {
+            private double _z;
+
+            public point3D(double x, double y, double z) : base(x, y)
+
+            {
+                _z = z;
+            }
+
+            public object Z => _z;
+            
+            public double DistanceTo3(double a, double b, double c)
+            {
+                double distance = Math.Sqrt((a - _x) * (a - _x) + (b - _y) * (b - _y) + (c - _z) * (c - _z));
+                return distance;
+            }
+        }
     }
       
     public interface IGeometryFactory
     {
         ArrayList GetMyPoints();
-        ArrayList GetRandomPoint(int maxX, int maxY);
-      //  ArrayList GetRandomPoint3D(int x, int y, int z);
+        ArrayList GetRandomPoint3D(int x, int y, int z);
     }
 
     public class Points : IGeometryFactory
@@ -50,36 +68,25 @@ namespace Homework_ex1
             return myArrayList;
         }
 
-        public ArrayList GetRandomPoint(int maxX, int maxY)
+        public ArrayList GetRandomPoint3D(int x, int y, int z)
         {
-            ArrayList myList2 = new ArrayList();
+            ArrayList myList3D = new ArrayList();
             for (int i = 0; i < 5; i++)
             {
                 Random random = new Random();
-                point2D point = new point2D(random.NextDouble() * maxX, random.NextDouble() * maxY); // transform numerele obtinute anterior 
-                myList2.Add(point);
+                point2D.point3D point = new point2D.point3D(random.NextDouble(), random.NextDouble(), random.NextDouble()); 
+                myList3D.Add(point);
             }
-            return myList2;
-        }
 
+            return myList3D; 
+        }
+    }
         class Program
         {
-            static void Main(string[] args)
+        public static double Z { get; private set; }
+
+        static void Main(string[] args)
             {
-                //Points PunctGeometric = new Points();
-
-                //ArrayList myListOfPoints = PunctGeometric.GetMyPoints();
-                //foreach (point2D punct in myListOfPoints)
-                //{
-                //    Console.WriteLine($"{punct.X}, {punct.Y}"); // afisez prima lista, cea din GetMyPoints
-                //}
-
-                //ArrayList SecondList = PunctGeometric.GetRandomPoint(120, 5);
-                //foreach (point2D punct in SecondList)
-                //{
-                //    Console.WriteLine($"{punct.X}, {punct.Y}");  // afisez a doua lista, cea cu numerele diferite, din GetRandomPoint
-                //}
-
                 Console.WriteLine("Calculam distanta dintre doua numere 2D");
                 Console.WriteLine("cream primul punct ");                           
                 point2D myFisrtPoint2D = new point2D(12, -14);
@@ -91,11 +98,27 @@ namespace Homework_ex1
 
                 Console.WriteLine("afisam distanta");
                 Console.WriteLine($"{myFisrtPoint2D.DistanceTO(mySecondPoint2D.X, mySecondPoint2D.Y)}");
-                             
-                Console.ReadKey();
+
+            //// afisez niste numere 3D, doar pt verificare 
+            //Points PunctGeometric = new Points();
+            //ArrayList myListOfPoints = PunctGeometric.GetRandomPoint3D(3, 4, 5);
+            //foreach (point2D.point3D punct in myListOfPoints)
+            //{
+            //    Console.WriteLine($"{punct.X}, {punct.Y}, {punct.Z}");
+
+
+            Console.WriteLine("Calculam distanta dintre doua numere 3D");
+            point2D.point3D firstPoint = new point2D.point3D(5, 4, 1);
+            Console.WriteLine($"primul punct: { firstPoint.X}, { firstPoint.Y}, { firstPoint.Z}");
+            point2D.point3D secondPoint = new point2D.point3D(1, 1, 1);
+            Console.WriteLine($"al doilea punct: { secondPoint.X}, { secondPoint.Y}, { secondPoint.Z}");
+            Console.WriteLine("afisam distanta dintre cele 2 puncte cu 3 coordonate: ");
+            Console.WriteLine($"{firstPoint.DistanceTo3(secondPoint.X,secondPoint.Y, Z)}");
+
+            Console.ReadKey();
 
             }
         }
     }
-}
+
  
