@@ -72,6 +72,8 @@ namespace ConsoleApp3
             _z = z;
         }
 
+        public int Z { get; internal set; }
+
         public override string ToString()   
         {
             return $"[{this._x},{_y}, {_z}]"; 
@@ -122,6 +124,9 @@ namespace ConsoleApp3
         ArrayList GetMyPoints();
         Point2D GetRandomPoint(int maxX, int maxY);
         Point3D GetRandomPoint(int maxX, int maxY, int maxZ);
+        //HOMEWORK 1
+        double CalculateDistanceTo2D(Point2D firstPoint2D, Point2D secondPoint2D);
+        double CalculateDistanceTo3D(Point3D firstPoint3D, Point3D secondPoint3D);
     }
 
     public class GeometryFactory : IGeometryFactory
@@ -161,9 +166,28 @@ namespace ConsoleApp3
 
         }
 
+        //HOMEWORK 1 - function
+        public double CalculateDistanceTo2D(Point2D firstPoint2D, Point2D secondPoint2D)
+        {
+            return Math.Sqrt(Math.Pow((secondPoint2D.X - firstPoint2D.X), 2) + Math.Pow((secondPoint2D.Y - firstPoint2D.Y), 2));
+        }
+
+        public double CalculateDistanceTo3D(Point3D firstPoint3D, Point3D secondPoint3D)
+        {
+            return Math.Sqrt(Math.Pow((secondPoint3D.X - firstPoint3D.X), 2) + Math.Pow((secondPoint3D.Y - firstPoint3D.Y), 2) + Math.Pow((secondPoint3D.Z - firstPoint3D.Z), 2));
+        }
     }
 
-        class Program
+    /* Homework 1: to the classes Point2D and Point3d that you created add for each class one new method double CalculateDistanceTo(Point2D/Point3D) 
+     * which will calculate the physical distance between two points! It is just basic trigonometry!
+     * Then on the main function please create 2 random 2D points and calculate the distance between them using a call like this: 
+     * myFirstpoint2d.CalculateDistanceTo(mySecondPoint2d) and display that distance on Console.
+     * Then do the same with 3D points!
+     * HINT: in .Net there is a mathmatical function for calculating the square root (radacina patrata a unui numar) of a number:
+     * Math.Sqrt(double number).
+     */
+
+    class Program
     {
         static void Main(string[] args)
         {
@@ -202,6 +226,24 @@ namespace ConsoleApp3
             var myPoint3 = myFactoryOfPoint.GetRandomPoint(maxX: 200, maxY: 300, maxZ: 400);
             Console.WriteLine(myPoint3.ToString());
             Console.WriteLine(myPoint3);
+
+            //HOMEWORK 1 - input + output
+            var secondPoint2D = new Point2D(20, 30);
+            var firstPoint2D = new Point2D(10, 15);
+
+            var distanceBetweenTwo2DPoints = myFactoryOfPoint.CalculateDistanceTo2D(firstPoint2D, secondPoint2D);
+
+            Console.WriteLine($"Distance between two 2D points : {distanceBetweenTwo2DPoints}");
+
+            var secondPoint3D = new Point3D(20, 30, 50);
+            var firstPoint3D = new Point3D(15, 40, 70);
+
+            var distanceBetweenTwo3DPoints = myFactoryOfPoint.CalculateDistanceTo3D(firstPoint3D, secondPoint3D);
+
+            Console.WriteLine($"Distance between two 3D points : {distanceBetweenTwo3DPoints}");
+
+
+
         }
     }
 
