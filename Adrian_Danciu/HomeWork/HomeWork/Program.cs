@@ -40,7 +40,21 @@ namespace HomeWork
                 Student s = (Student)s1[i];
                 Console.WriteLine(s.Name);
             }
-                       
+
+            //Homework 2 to the classes Point2D and Point3d that you created add for each class one 
+            //new method double CalculateDistanceTo(Point2D/Point3D) which will calculate the physical 
+            //distance between two points! It is just basic trigonometry! 😄 Then on the main function 
+            //please create 2 random 2D points and calculate the distance between them using a call like this:
+            //myFirstpoint2d.CalculateDistanceTo(mySecondPoint2d) and display that distance on Console.
+
+            Random random = new Random();
+            Point2D myFirstpoint2d = new Point2D(random.NextDouble(), random.NextDouble());
+            Point2D mySecondpoint2d = new Point2D(random.NextDouble(), random.NextDouble());
+
+            Console.WriteLine("myFirstpoint2d is:" + myFirstpoint2d + " " + "mySecondpoint2d is:" + mySecondpoint2d);
+
+            Console.WriteLine("The distance between two points is: " + myFirstpoint2d.CalculateDistanceTo(mySecondpoint2d));
+                          
         }
 
         public static int[] MySort (int[] unsorted)
