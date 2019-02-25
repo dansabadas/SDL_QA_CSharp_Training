@@ -192,6 +192,7 @@ namespace Homework2
     {
         double GetDistance2Points_2D(Point2D first, Point2D second);
         double GetDistance2Points_3D(Point3D first, Point3D second);
+        
     }
 
     public class Implementation : IGeometryFactory
@@ -205,6 +206,8 @@ namespace Homework2
         {
            return  Math.Sqrt(Math.Pow((firstPoint.X - secondPoint.X), 2) + Math.Pow((firstPoint.Y - secondPoint.Y), 2) + Math.Pow((firstPoint.Z - secondPoint.Z), 2));
         }
+
+        
     }
 
     class Program
@@ -213,14 +216,27 @@ namespace Homework2
         {
             ArrayList animals = new ArrayList();
             var test = new Animal_Farm();
-            animals=test.Generate_Animals();
+            animals = test.Generate_Animals();
 
-            for(int i = 0; i < 100; i++)
+            for (int i = 0; i < 100; i++)
             {
                 var anim = animals[i] as Animal;
 
                 Console.WriteLine(anim.ToString());
             }
+
+            Point2D first2D = new Point2D(2, 5);
+            Point2D second2D = new Point2D(5, 7);
+            Point3D first3D = new Point3D(3, 4, 5);
+            Point3D second3D = new Point3D(6, 9, 2);
+
+            IGeometryFactory geo = new Implementation();
+            var distance2D = geo.GetDistance2Points_2D(first2D, second2D);
+            Console.WriteLine("2D distance is " + distance2D);
+
+            var distance3D = geo.GetDistance2Points_3D(first3D, second3D);
+            Console.WriteLine("3D distance is " + distance3D);
+            
         }
     }
 }
