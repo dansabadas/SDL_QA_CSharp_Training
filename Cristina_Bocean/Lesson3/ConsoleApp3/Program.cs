@@ -189,17 +189,16 @@ namespace ConsoleApp3
                 _name = value;
             }
         }
-        protected Animal(int ID, string Name)
+        protected Animal(int id, string name)
         {
-            _id = ID;
-            _name = Name;
+            _id = id;
+            _name = name;
         }
 
         public override string ToString()
         {
             return $"ID= {_id}, Name= {_name}";
         }
-
     }
 
     public class Pig : Animal
@@ -217,9 +216,7 @@ namespace ConsoleApp3
     }
     public class Dog : Animal
     {
-
         public int EnemiesBitten { get; set; }
-
 
         public Dog(int id, string name, int enemiesBitten) : base(id, name)
         {
@@ -234,7 +231,6 @@ namespace ConsoleApp3
 
     public class Cat : Animal
     {
-
         public int MiceKilled { get; set; }
 
         public Cat(int id, string name, int miceKilled) : base(id, name)
@@ -251,7 +247,6 @@ namespace ConsoleApp3
         protected int _milkProduced;
         public int MilkProduced
         {
-
             get
             {
                 return _milkProduced;
@@ -283,13 +278,12 @@ namespace ConsoleApp3
 
             while (i < 100)
             {
-                int id = r.Next(0, 100);
+                int id = r.Next(0,1000);
                 int genre = id % 4;
                 int weight = r.Next(1, 100) % 30;
                 int enemiesBitten = r.Next(1, 100) % 20;
                 int miceKilled = r.Next(1, 100) % 70;
                 int milkProduced = r.Next(1, 100) % 25;
-
 
                 switch (genre)
                 {
@@ -310,8 +304,8 @@ namespace ConsoleApp3
                         animals.Add(cow); ;
                         break;
                     default:
-                        Console.WriteLine("Unkown animal.");
-                        return animals;
+                        Console.WriteLine("Unknown animal.");
+                        break;
                 }
                 i++;
             }
@@ -385,7 +379,6 @@ namespace ConsoleApp3
             {
                 Console.WriteLine(animal.ToString());
             }
-
         }
     }
 }
