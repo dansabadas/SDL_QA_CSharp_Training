@@ -38,14 +38,16 @@ namespace ConsoleApp3
                 Console.WriteLine(pnt.ToString());
             }
 
-            Point2D point2D = randomPoints.GetRandomPoint(10, 10);
-            Point3D point3D = randomPoints.GetRandomPoint(10, 10, 10);
+            Point2D firstPoint2D = randomPoints.GetRandomPoint(10, 10);
+            Point2D secondPoint2D = randomPoints.GetRandomPoint(10, 10);
+            Point3D firstPoint3D = randomPoints.GetRandomPoint(10, 10, 10);
+            Point3D secondPoint3D = randomPoints.GetRandomPoint(10, 10, 10);
 
-            double distanceBetween2DPoints = randomPoints.CalculateDistance(point2D);
-            double distanceBetween3DPoints = randomPoints.CalculateDistance(point3D);
+            double distanceBetween2DPoints = randomPoints.CalculateDistance(firstPoint2D, secondPoint2D);
+            double distanceBetween3DPoints = randomPoints.CalculateDistance(firstPoint3D, secondPoint3D);
 
-            Console.WriteLine(point2D);
-            Console.WriteLine(point3D);
+            Console.WriteLine(firstPoint2D);
+            Console.WriteLine(firstPoint3D);
 
             Console.WriteLine($"Distance between the 2 points is: {distanceBetween2DPoints}");
             Console.WriteLine($"Distance between all 3 points is: {distanceBetween3DPoints}");

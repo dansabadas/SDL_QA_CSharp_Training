@@ -41,24 +41,16 @@ namespace ConsoleApp3
             return point;
         }
 
-        public double CalculateDistance(Point2D point2D)
+        public double CalculateDistance(Point2D firstPoint2D, Point2D secondPoint2D)
         {
-            double result = (point2D.X - point2D.Y);
-            if (result < 0)
-            {
-                return result * -1;
-            }
-            else
-            {
-                return result;
-            }
-            
+            double result = Math.Sqrt(Math.Pow((secondPoint2D.X - firstPoint2D.X), 2) + Math.Pow((secondPoint2D.Y - firstPoint2D.Y), 2));
+            return result;
         }
 
-        public double CalculateDistance(Point3D point3D)
+        public double CalculateDistance(Point3D firstPoint3D, Point3D secondPoinf3D)
         {
-            double result = ((point3D.X - point3D.Y) + (point3D.Y - point3D.Z) + (point3D.Z - point3D.X)) * -1;
-            return result * -1;
+            double result = Math.Sqrt(Math.Pow((secondPoinf3D.X - firstPoint3D.X), 2) + Math.Pow((firstPoint3D.Y - secondPoinf3D.Y), 2) + Math.Pow((firstPoint3D.Z- secondPoinf3D.Z), 2));
+            return result;
         }
     }
 }

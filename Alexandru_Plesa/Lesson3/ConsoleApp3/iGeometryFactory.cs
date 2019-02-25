@@ -13,8 +13,8 @@ namespace ConsoleApp3
         Point2D GetRandomPoint(int maxX, int maxY);
         Point3D GetRandomPoint(int maxX, int maxY, int maxZ);
 
-        double CalculateDistance(Point2D point2D);
-        double CalculateDistance(Point3D point3D);
+        double CalculateDistance(Point2D firstPonint2D, Point2D secondPoint2D);
+        double CalculateDistance(Point3D firstPonint3D, Point3D secondPoint3D);
 
     }
 }
