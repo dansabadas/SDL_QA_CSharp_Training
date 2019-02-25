@@ -30,7 +30,7 @@ namespace ConsoleApp1
             bool b1 = true, b2 = false;
             Console.WriteLine(value: $"{b1} {b2}");
 
-            byte by1 = 13;
+            
             byte by2 = 255;
             //byte by3 = by1 + by2;
 
