@@ -88,17 +88,7 @@ namespace ConsoleApp3
         public double X
         {
             get { return _x; }
-            set
-            {
-                //if ( value < 0)
-                //{
-                //    _x = -value;
-                //}
-                //else
-                //{
-                //    _x =  value + 10;
-                //}
-            }
+            set { }
         }
 
         public double Y
@@ -174,6 +164,119 @@ namespace ConsoleApp3
         }
     }
 
+    public abstract class Animal
+    {
+        public string Name { get; set; }
+        public int ID { get; set; }
+
+        protected Animal(string name, int id)
+        {
+            Name = name;
+            ID = id;
+        }
+
+        public override string ToString()
+        {
+            return $"Name {Name}, ID {ID}";
+        }
+    }
+
+    public class Pig : Animal 
+    {
+        public int Weight { get; set; }
+        public Pig (string name, int id, int weight) : base (name, id)
+        {
+            ID = id;
+            Name = name;
+            Weight = weight;
+        }
+
+        public override string ToString()
+        {
+            return $"Pig {base.ToString()}" ;
+        }
+    }
+
+    public class Dog : Animal
+    {
+        public int EnemiesBitten { get; set; }
+        public Dog (string name, int id, int enemiesBitten) : base (name, id)
+        {
+            Name = name;
+            ID = id;
+            EnemiesBitten = enemiesBitten;
+        }
+
+        public override string ToString()
+        {
+            return $"Dog {base.ToString()}";
+        }
+    }
+
+    public class Cat : Animal
+    {
+        public int MiceKilled { get; set; }
+        public Cat (string name, int id, int miceKilled) : base (name, id)
+        {
+            Name = name;
+            ID = id;
+            MiceKilled = miceKilled;
+        }
+
+        public override string ToString()
+        {
+            return $"Cat {base.ToString()}";
+        }
+    }
+
+    public class Cow : Animal
+    {
+        public int MilkProduced { get; set; }
+        public Cow (string name, int id, int milkProduced) : base (name, id)
+        {
+            Name = name;
+            ID = id;
+            MilkProduced = milkProduced;
+        }
+
+        public override string ToString()
+        {
+            return $"Cow {base.ToString()}";
+        }
+    }
+
+    public class AnimalFarm
+    {
+        public ArrayList GenerateAnimals (int numberOfAnimals)
+        {
+            ArrayList animals = new ArrayList();
+            Random random = new Random();
+            for (int i = 0; i < numberOfAnimals; i++)
+            {
+                if (i % 4 == 0)
+                {
+                    int weight = random.Next(200);
+                    animals.Add(new Pig("Pig", (i + 1), weight));
+                }
+                else if (i % 4 == 1)
+                {
+                    int enemiesBitten = random.Next(10);
+                    animals.Add(new Dog("Dog", (i + 1), enemiesBitten));
+                }
+                else if (i % 4 == 2)
+                {
+                    int miceKilled = random.Next(25);
+                    animals.Add(new Cat("Cat", (i + 1), miceKilled));
+                }
+                else if (i % 4 == 3)
+                {
+                    int milkProduced = random.Next(10);
+                    animals.Add(new Cow("Cow", (i + 1), milkProduced));
+                }
+            }
+            return animals;
+        }
+    }
 
     class Lesson3
     {
@@ -216,6 +319,13 @@ namespace ConsoleApp3
             Console.WriteLine(geometryFactory.GetDistanceBetweenTwoPoints3D(new Point3D(1, 15, 5), new Point3D(1, 3, 5)));
             Console.WriteLine(geometryFactory.GetDistanceBetweenTwoPoints3D(new Point3D(1, 3, 5), new Point3D(-4, 3, 5)));
             Console.WriteLine(geometryFactory.GetDistanceBetweenTwoPoints3D(new Point3D(-1, -3, -5), new Point3D(1, 3, 5)));
+
+            var animalFarm = new AnimalFarm();
+            var animals = animalFarm.GenerateAnimals(100);
+            for (int i = 0; i < animals.Count; i++)
+            {
+                Console.WriteLine(animals[i].ToString());
+            }
 
             Console.Read();
         }
