@@ -66,9 +66,9 @@ namespace ConsoleApp1
     }
 
 
-   public class Point2D
+    public class Point2D
 
-   {
+    {
         public Point2D() { }
         public double X { get { return _x; } set { _x = value; } }
         public double Y { get { return _y; } set { _y = value; } }
