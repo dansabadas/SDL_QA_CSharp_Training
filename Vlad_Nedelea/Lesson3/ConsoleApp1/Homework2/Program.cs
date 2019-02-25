@@ -237,6 +237,8 @@ namespace Homework2
             var distance3D = geo.GetDistance2Points_3D(first3D, second3D);
             Console.WriteLine("3D distance is " + distance3D);
             
+
+
         }
     }
 }
