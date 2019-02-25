@@ -74,6 +74,10 @@ namespace ConsoleApp3
     public class Point3d: Point2d
     {
         private double _z;
+        public double Z
+        {
+            get { return _z; }
+        }
         public Point3d(double x, double y,double z): base(x,y)
         {
             _z = z;
@@ -89,6 +93,8 @@ namespace ConsoleApp3
         ArrayList GetMyPoints();
         Point2d GetRandomPoint(int maxX, int maxY);
         Point3d GetRandomPoint(int maxX, int maxY, int maxZ);
+        double GetDistanceBetweenTwoPoints(Point2d firstPonint2D, Point2d secondPoint2D);
+        double GetDistanceBetweenThreePoints3d(Point3d firstPonint3D, Point3d secondPoint3D);
     }
     public class GeometryFactory : IGeometryFactory
     {
@@ -118,7 +124,25 @@ namespace ConsoleApp3
 
             return aPoint;
         }
+        public double GetDistanceBetweenTwoPoints (Point2d A, Point2d B)
+        {
+            double distance = Math.Sqrt(Math.Pow((A.X-B.X), 2) + Math.Pow((A.Y-B.Y), 2));
+            return distance;
+        }
+        
+        public double GetDistanceBetweenThreePoints3d(Point3d a, Point3d b)
+        {
+            double distance = Math.Sqrt(Math.Pow((a.X - b.X), 2) + Math.Pow((a.Y - b.Y), 2) + Math.Pow((a.Z - b.Z), 2));
+            return distance;
+        }
     }
+    public abstract class Animal
+    {
+        protected int ID;
+        protected string Name;
+
+    }
+   
     class Program
     {
         static void Main(string[] args)
@@ -130,20 +154,39 @@ namespace ConsoleApp3
             foreach (Student student in myList)
             {
                 Console.WriteLine(student.Name + " " + student.DateOfBirth);
+                Console.WriteLine(student.ToString());
             }
-            IGeometryFactory myFactoryOfPoint = new GeometryFactory();
-            ArrayList PointList = myFactoryOfPoint.GetMyPoints();
-            
-                foreach(Point2d point in PointList)
-                {
-                    Console.WriteLine(value: $"({point.X},{point.Y})");
-                }
 
-            var myPoint1 = myFactoryOfPoint.GetRandomPoint(2,3);
-            Console.WriteLine(myPoint1.ToString());
-            var myPoint2 = myFactoryOfPoint.GetRandomPoint(200, 300, 400);
-            Console.WriteLine(myPoint2.ToString());
-            
+            ArrayList evenList = myRepository.createAllStudents2();
+            foreach (Student student in evenList)
+            {
+                Console.WriteLine(student.Name + " " + student.DateOfBirth);
+            }
+
+            IGeometryFactory randomPoints = new GeometryFactory();
+            ArrayList points = randomPoints.GetMyPoints();
+
+            foreach (Point2d pnt in points)
+            {
+                Console.WriteLine(pnt.ToString());
+            }
+
+            Point2d firstPoint2D = randomPoints.GetRandomPoint(3, 10);
+            Point2d secondPoint2D = randomPoints.GetRandomPoint(2, 3);
+            Point3d firstPoint3D = randomPoints.GetRandomPoint(1, 1, 1);
+            Point3d secondPoint3D = randomPoints.GetRandomPoint(10, 10, 10);
+
+            double distanceBetween2DPoints = randomPoints.GetDistanceBetweenTwoPoints(firstPoint2D, secondPoint2D);
+            double distanceBetween3DPoints = randomPoints.GetDistanceBetweenThreePoints3d(firstPoint3D, secondPoint3D);
+
+            Console.WriteLine(firstPoint2D);
+            Console.WriteLine(firstPoint3D);
+
+            Console.WriteLine($"Distance between the 2 points is: {distanceBetween2DPoints}");
+            Console.WriteLine($"Distance between all 3 points is: {distanceBetween3DPoints}");
+
+
+
             Console.ReadKey();
         }
     }
