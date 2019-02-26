@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace BankLibrary
 {
-    
-    public class Class1
+    public interface IBank
     {
-        
+        ArrayList GenerateFinancialTransactions(int nrOfTransactions);
     }
 }
