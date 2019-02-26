@@ -11,6 +11,12 @@ namespace ConsoleApp4
         public string Name { get; }
         public Engine Enfine { get; set; }
 
+
+        public Car (string name)
+        {
+            Name = name;
+        }
+        
         public Wheel[] Wheels
         {
             get;
