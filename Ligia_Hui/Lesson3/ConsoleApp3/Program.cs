@@ -140,7 +140,7 @@ namespace ConsoleApp3
     {
         protected int ID;
         protected string Name;
-
+  
     }
    
     class Program
