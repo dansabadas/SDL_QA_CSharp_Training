@@ -37,7 +37,6 @@ namespace ConsoleApp3
         public Point3D GetRandomPoint(int maxX, int maxY, int maxZ)
         {
             Point3D point = new Point3D(rnd.NextDouble() * maxX, rnd.NextDouble() * maxY, rnd.NextDouble() * maxZ);
-
             return point;
         }
 
