@@ -12,7 +12,8 @@ namespace HomeWork
     {
         static void Main(string[] args)
         {
-            //Homework: 1. given any array as input, produce as output the sorted array 
+            //Homework: 1. 
+            //given any array as input, produce as output the sorted array 
             //(do not use built-in functions like Array.Sort() but create your own sorting implementation
 
             int[] unsortedRawArray = { 3, 2, 1, 45, 0 };
@@ -25,6 +26,7 @@ namespace HomeWork
             Console.WriteLine();
 
             //Homework: 2.Implement Fibonacci iteratively, not recursively
+
             int fiboResult = Fibonacci(5);
 
             Console.WriteLine(fiboResult);
@@ -56,8 +58,8 @@ namespace HomeWork
             Console.WriteLine("The distance between two points is: " + myFirstpoint2d.CalculateDistanceTo(mySecondpoint2d));
 
             //Homework 2.1 The Animal farm! 😄
-            //            Create an abstract class Animal. Even though I did not explain what an abstract class is, please just write public abstract class Animal {...}
-            //        and that would do it!. Add inside that class declaration for 2 properties: int ID and string Name which are protected. Override the ToString() method to return a string with the ID and Name
+            //Create an abstract class Animal. Even though I did not explain what an abstract class is, please just write public abstract class Animal {...}
+            //and that would do it!. Add inside that class declaration for 2 properties: int ID and string Name which are protected. Override the ToString() method to return a string with the ID and Name
             //Also create a protected constructor that takes as arguments an int id and a string name and populate the properties with the parameters passed in the constructor.
             //2. create a class Pig which inherits from Animal and adds an additional public property int Weight { get; set; }
             //3. create a class Dog which inherits : from Animal and that adds an additional public property int EnemiesBitten
@@ -78,6 +80,20 @@ namespace HomeWork
             {
                 Console.WriteLine(animal);
             }
+            
+            //The Homework: The Bank!!
+            //1. create a class Person which defines a phisical human being with three public properties: int ID string Name and DateTime BirthDate, 
+            //all with Getters only
+            //2. create a class FinancialTransaction with 3 getter only properties: Person From, Person To and double Amount so this class represents a financial 
+            //transaction where the From person sends the Amount of money to the To person
+            //3. Create a interface IBank with one method: ArrayList GenerateFinancialTransactions(). Then create a class Bank which implements 
+            //the interface IBank, so in the method implementation you will generate some(let's say around 20) FinancialTransaction objects. 
+            //In the implementation let's say that at every 3 transactions the To person repeats and at every 5 transactions the From person repeats.Also the amount will be some random number between 100 and 200 (so we don't waste too much money).
+            //4. At the end please print at the console the transactions: the From person's name, the To Person's name and the Amount!
+
+
+
+
 
         }
 

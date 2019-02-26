@@ -60,9 +60,9 @@ namespace ConsoleApp4
             Wheel w3 = new Wheel("Dunlop", WhellSize.big);
             Wheel w4 = new Wheel("Dunlop", WhellSize.big);
 
-            Car.car1 = new Car("BMW");
+            Car car1 = new Car("BMW");
             car1.Engine = engine1;
-            car1.Whells = new Whell[4] { w1, w2, w3, w4 };
+            car1.Wheels= new Whell[4] { w1, w2, w3, w4 };
         }
 
         public static dynamic AddDynamic(dynamic d1, dynamic d2)

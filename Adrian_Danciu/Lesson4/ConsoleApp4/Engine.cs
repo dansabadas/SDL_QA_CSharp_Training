@@ -9,13 +9,12 @@ namespace ConsoleApp4
     class Engine
     {
         public string Name { get; }
-        public int HP { get; }
+        public int Power { get; }
 
         public Engine (string name, int power)
         {
             Name = name;
-
+            Power = power;
         }
-
     }
 }
