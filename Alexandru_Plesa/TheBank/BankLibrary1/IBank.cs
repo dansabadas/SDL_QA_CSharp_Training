@@ -10,5 +10,6 @@ namespace BankLibrary
     public interface IBank
     {
         ArrayList GenerateFinancialTransactions(int nrOfTransactions);
+        IList<Person> GeneratePersonBalance(ArrayList tranzactions);
     }
 }

@@ -11,7 +11,7 @@ namespace BankLibrary
         public int Id { get; }
         public string Name { get; }
         public DateTime BirthDate { get; }
-        public static double Ballance { get; set; }
+        public double Ballance { get; set; }
 
         public Person (int id, string name)
         {

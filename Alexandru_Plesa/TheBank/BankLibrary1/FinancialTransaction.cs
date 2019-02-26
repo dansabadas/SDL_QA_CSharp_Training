@@ -8,9 +8,9 @@ namespace BankLibrary
 {
     public class FinancialTransaction
     {
-        Person CreditedPerson { get; set; }
-        Person DebitedPerson { get; set; }
-        double Ammount { get; set; }
+        public Person CreditedPerson { get; set; }
+        public Person DebitedPerson { get; set; }
+        public double Ammount { get; set; }
 
         public FinancialTransaction(Person creditedPerson, Person debitedPerson, double ammount)
         {
