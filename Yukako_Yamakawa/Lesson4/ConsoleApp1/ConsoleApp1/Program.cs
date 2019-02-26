@@ -54,10 +54,10 @@ namespace ConsoleApp1
             //QUESTION: when result1.Blabla = "Blabla" is still complained here although in theory, dynamic value should now be flexible
 
             Engine engine1 = new Engine(name: "Toyota", power: 135);
-            Wheel w1 = new Wheel(name: "Dunlop", WheelSize.Big);
-            Wheel w2 = new Wheel(name: "Dunlop", WheelSize.Big);
-            Wheel w3 = new Wheel(name: "Goodyear", WheelSize.Big);
-            Wheel w4 = new Wheel(name: "Michellan", WheelSize.Big);
+            Wheel w1 = new Wheel("Dunlop", WheelSize.Big);
+            Wheel w2 = new Wheel("Dunlop", WheelSize.Big);
+            Wheel w3 = new Wheel("Goodyear", WheelSize.Big);
+            Wheel w4 = new Wheel("Michellan", WheelSize.Big);
 
             Car car1 = new Car(name: "BMW");
             car1.Engine = engine1;
