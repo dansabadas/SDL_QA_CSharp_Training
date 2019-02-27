@@ -80,7 +80,7 @@ namespace HomeWork
             {
                 Console.WriteLine(animal);
             }
-            
+
             //The Homework: The Bank!!
             //1. create a class Person which defines a phisical human being with three public properties: int ID string Name and DateTime BirthDate, 
             //all with Getters only
@@ -88,10 +88,17 @@ namespace HomeWork
             //transaction where the From person sends the Amount of money to the To person
             //3. Create a interface IBank with one method: ArrayList GenerateFinancialTransactions(). Then create a class Bank which implements 
             //the interface IBank, so in the method implementation you will generate some(let's say around 20) FinancialTransaction objects. 
-            //In the implementation let's say that at every 3 transactions the To person repeats and at every 5 transactions the From person repeats.Also the amount will be some random number between 100 and 200 (so we don't waste too much money).
+            //In the implementation let's say that at every 3 transactions the To person repeats and at every 5 transactions the From person repeats.
+            //Also the amount will be some random number between 100 and 200 (so we don't waste too much money).
             //4. At the end please print at the console the transactions: the From person's name, the To Person's name and the Amount!
 
+            IBank pBank = new Bank();
+            ArrayList transactions = pBank.GenerateFinancialTransactions();
 
+            foreach (FinancialTransaction transaction in transactions)
+            {
+                Console.WriteLine(transaction);
+            }
 
 
 

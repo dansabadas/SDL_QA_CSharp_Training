@@ -29,11 +29,7 @@ namespace ConsoleApp3
                 int iterator = 0;
                 while (iterator < 100)
                 {
-                    Student mystudent = new Student();
-                    mystudent.id = iterator;
-                    mystudent.name = "student name " + iterator;
-                    mystudent.dateOfBirth = DateTime.Today.AddYears(-iterator);
-                    myList.Add(mystudent);
+              
                     iterator++;
                 }
 

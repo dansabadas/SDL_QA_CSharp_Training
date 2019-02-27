@@ -6,16 +6,24 @@ using System.Threading.Tasks;
 
 namespace HomeWork
 {
-    class FinancialTransaction
+        public class FinancialTransaction
     {
-        public string PersonFrom;
-        public string PersonTo;
-        double Amount;
+        public Person From { get; set;}
+        public Person To   { get; set; }
+        double Amount      { get; }
 
-        public FinancialTransaction (string personFrom, string personTo, double amount)
+        public override string ToString()
         {
-            PersonFrom = personFrom;
-            PersonTo = personTo;
+            return $"{From.Name}, {To.Name}, {Amount}"; 
+        }
+
+     
+
+
+        public FinancialTransaction (Person personFrom, Person personTo, double amount)
+        {
+            From = personFrom;
+            To = personTo;
             Amount = amount;
         }
     }

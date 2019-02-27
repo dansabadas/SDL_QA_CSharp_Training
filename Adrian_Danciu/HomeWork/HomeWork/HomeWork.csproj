@@ -45,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
+    <Compile Include="Bank.cs" />
     <Compile Include="FinancialTransaction.cs" />
+    <Compile Include="IBank.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Point2D.cs" />
     <Compile Include="Program.cs" />

@@ -15,7 +15,7 @@ namespace ConsoleApp4
     class Wheel
     {
         public string Name { get; }
-        public WhellSize Size { get; }
+        public WhellSize Size { get; set; }
 
         public Wheel(string name, WhellSize size)
         {

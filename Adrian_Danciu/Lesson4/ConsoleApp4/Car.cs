@@ -20,7 +20,7 @@ namespace ConsoleApp4
         
         public Wheel[] Wheels
         {
-            get;
+            get; set;
         }
     }
 }

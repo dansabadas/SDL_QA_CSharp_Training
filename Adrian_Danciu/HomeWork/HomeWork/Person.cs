@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace HomeWork
 {
-    class Person
+    public class Person
     {
         public int ID { get; }
-        public string Name { get; }
+        public string Name { get; set; }
         public DateTime BirthDate { get; }
 
         public Person (int id, string name, DateTime birthDate)
