@@ -60,6 +60,7 @@ namespace ConsoleApp3
             Car car1 = new Car("BMW");
             car1.Engine = engine1;
             car1.Wheels = new Wheel[4] { w1, w2, w3, w4 };
+            Console.ReadKey(); 
 
         }
 
