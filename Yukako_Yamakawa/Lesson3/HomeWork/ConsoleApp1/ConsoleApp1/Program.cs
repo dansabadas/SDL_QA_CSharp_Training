@@ -40,123 +40,14 @@ namespace ConsoleApp1
         //    //a1.ToString();
         //}
 
-
-
-        public abstract class Animal // base class
-        {
-            protected int _id;
-            protected string _name;
-            //abstract public string GenerateAnimals();
-
-            public int Id
-            {
-                get { return _id; }
-                set { _id = value; }
-            }
-
-            public string Name
-            {
-                get { return _name; }
-                set { _name = value; }
-            }
-
-            protected Animal(int id, string name)
-            {
-                _id = id;
-                _name = name;
-            }
-
-            public override string ToString()
-            {
-                return $" Base class animal name : {_name} and ID :{_id}";
-            }
-        }
+        public static void Main(){}
 
 
 
 
-        class Pig : Animal // derived from Animal - pig is an animal
-        {
-            private int _weight;
-            public int Weight
-            {
-                get { return _weight; }
-                set { _weight = value; }
-            }
-
-            public Pig(int id, string name, int weight) : base(id, name)
-            {
-                _weight = weight;
-            }
-
-            public override string ToString()
-            {
-                return "Pig " + base.ToString();
-            }
-
-        }
 
 
 
-        class Dog : Animal // derived from Animal - dog is an animal
-        {
-
-            private int _enemiesBItten;
-
-            public int EnemiesBitten
-            {
-                get { return _enemiesBItten; }
-                set { _enemiesBItten = value; }
-            }
-            public Dog(int id, string name, int enemiesBitted) : base(id, name)
-            {
-                _enemiesBItten = enemiesBitted;
-            }
-
-            public override string ToString()
-            {
-                return "Dog " + base.ToString();
-            }
-        }
-
-
-        class Cat : Animal // derived from Animal - dog is an animal
-        {
-            public int _miceKilled;
-            public int MiceKilled
-            {
-                get { return _miceKilled; }
-                set { _miceKilled = value; }
-            }
-            public Cat(int id, string name, int miceKilled) : base(id, name)
-            {
-                _miceKilled = miceKilled;
-            }
-
-            public override string ToString()
-            {
-                return "Cat " + base.ToString();
-            }
-        }
-
-        class Cow : Animal // derived from Animal - dog is an animal
-        {
-            public int _milkProduced;
-            public int MilkProduced
-            {
-                get { return _milkProduced; }
-                set { _milkProduced = value; }
-            }
-            public Cow(int id, string name, int milkProduced) : base(id, name)
-            {
-                _milkProduced = milkProduced;
-            }
-
-            public override string ToString()
-            {
-                return "Cow " + base.ToString();
-            }
-        }
 
         public interface IAnimalFarm
         {
@@ -172,7 +63,7 @@ namespace ConsoleApp1
                 while (iteratorY < 100)
                 {
                     // NOTE: Realise that instance cannot be created for the abstruct class. Would you possibly advise how this could be resolved? 
-                    Animal myAnimal = new Animal(); 
+                    Animal myAnimal = new Pig(iteratorY, "Name" + iteratorY, 50); 
 
                     myAnimal.Id = iteratorY;
                     myAnimal.Name = "Animal Name " + iteratorY;

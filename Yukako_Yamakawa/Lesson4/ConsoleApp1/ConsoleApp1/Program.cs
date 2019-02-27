@@ -16,8 +16,8 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(p);
             }
-            Console.WriteLine(value: "Overall number of points generated up to now: " + Point2D.OverallNumberOfPoints);
-            Point2D p1 = new Point2D(x:2, y:3);
+            Console.WriteLine("Overall number of points generated up to now: " + Point2D.OverallNumberOfPoints);
+            Point2D p1 = new Point2D(2, 3);
             //OverallNumberOfPoints[p1x,y]...[p3x,y][][]
 
             object p2 = p1;
@@ -38,7 +38,7 @@ namespace ConsoleApp1
             arr2.Add(p1);
             arr2.Add(p4);
 
-            Console.WriteLine(value: "Overall number of points generated up to now: " + Point2D.OverallNumberOfPoints);
+            Console.WriteLine("Overall number of points generated up to now: " + Point2D.OverallNumberOfPoints);
 
             Animal a1 = new Pig();  //NOTE: if you put "Animal", since it is abstruct, it would complain unlessyou add the interface
             a1.Id = 1;

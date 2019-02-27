@@ -24,7 +24,7 @@ namespace ClassLibrary1
             _x = x;
             _y = y;
 
-            OverallNumberOfPoints += -1;
+            OverallNumberOfPoints += 1;
         }
         public double X   // it is mapped to private _x   & This is a property
         {
