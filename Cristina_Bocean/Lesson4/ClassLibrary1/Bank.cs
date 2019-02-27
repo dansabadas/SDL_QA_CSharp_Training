@@ -17,8 +17,7 @@ namespace ClassLibrary1
         public ArrayList GenerateFinancialTransactions()
         {
             ArrayList transactions = new ArrayList();
-            Random r = new Random();
-            double amount = r.NextDouble() * 100 + 100;
+            Random r = new Random();     
 
             const string repeatFrom = "Rick";
             const string repeatTo = "Morty";
@@ -27,6 +26,7 @@ namespace ClassLibrary1
             string[] ToList = new string[] { "Vivian", "Claire", "Britney", "Noah", "Sean", "Aiden", "Mason", "Jacob", "Lucas", "Elijah", "Logan", "Ethan", "James", "Liam", "Teddy", "Marcus", "Alex", "Dan", "Janie", "Zack", "Cleo" };
             for (int i = 1; i <= 20; i++)
             {
+                double amount = r.NextDouble() * 100 + 100;
                 if (i % 5 == 0 && i % 3 != 0)
                 {
                     Person f1 = new Person(i, repeatFrom, DateTime.Today.AddYears(-i));
