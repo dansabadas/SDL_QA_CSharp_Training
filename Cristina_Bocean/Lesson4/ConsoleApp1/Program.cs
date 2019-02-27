@@ -68,6 +68,16 @@ namespace ConsoleApp1
             car1.Engine = engine1;
             car1.Wheels = new Wheel[4] { w1, w2, w3, w4 };
 
+            Console.WriteLine();
+            //Homework Lesson 4
+
+            IBank myBank = new Bank();
+            ArrayList transactions = new ArrayList();
+            transactions = myBank.GenerateFinancialTransactions();
+            foreach (FinancialTransaction transaction in transactions)
+            {              
+                Console.WriteLine($"({transaction.From.Name}, {transaction.To.Name}, {transaction.Amount})");
+            }
         }
         public static dynamic AddDynamic(dynamic d1, dynamic d2)
         {

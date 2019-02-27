@@ -41,9 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animals.cs" />
+    <Compile Include="Bank.cs" />
     <Compile Include="Car.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Engine.cs" />
+    <Compile Include="FinancialTransaction.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Point2D.cs" />
     <Compile Include="PointFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
