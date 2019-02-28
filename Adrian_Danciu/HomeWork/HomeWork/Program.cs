@@ -37,7 +37,7 @@ namespace HomeWork
             //should return an ArrayList populated with the students.
 
             ArrayList s1 = CreateStudents2(100);
-            for (int i=0; i<s1.Count; i++)
+            for (int i = 0; i < s1.Count; i++)
             {
                 Student s = (Student)s1[i];
                 Console.WriteLine(s.Name);
@@ -104,13 +104,13 @@ namespace HomeWork
 
         }
 
-        public static int[] MySort (int[] unsorted)
+        public static int[] MySort(int[] unsorted)
         {
             for (int i = 0; i < unsorted.Length; i++)
             {
                 int temp;
 
-                for (int j = i;  j < unsorted.Length; j++)
+                for (int j = i; j < unsorted.Length; j++)
                 {
                     if (unsorted[j] < unsorted[i])
                     {
@@ -134,7 +134,7 @@ namespace HomeWork
             int a = 1;
             int i = 2;
             int currentValue = a + b;
-            while(i<=n)
+            while (i <= n)
             {
                 int temp1 = a;
                 int temp2 = currentValue;
@@ -147,12 +147,12 @@ namespace HomeWork
             return currentValue;
         }
 
-        public static ArrayList CreateStudents2 (int numberOfStudents)
+        public static ArrayList CreateStudents2(int numberOfStudents)
         {
 
             ArrayList students = new ArrayList();
-         
-            for (int i = 0; i<100; i++)
+
+            for (int i = 0; i < 100; i++)
             {
                 Student student = new Student();
                 student.Name = "Ady" + i;
