@@ -16,7 +16,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            
+            IBank myBank = new Bank();
+            ArrayList transactions = new ArrayList();
+            transactions = myBank.GenerateFinancialTransactions();
+            foreach (FinancialTransaction transact in transactions)
+            {
+                Console.WriteLine($"({transact.PersonFrom} {transact.PersonTo} {transact.Amount})");
+            }
         }
     }
 }

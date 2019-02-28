@@ -11,5 +11,6 @@ namespace ConsoleApp1
     public interface IBank
     {
         ArrayList GenerateFinancialTransactions(int transactionsMade);
+        ArrayList GenerateFinancialTransactions();
     }
 }

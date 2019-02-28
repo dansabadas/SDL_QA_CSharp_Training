@@ -11,7 +11,7 @@ namespace ConsoleApp1
 // Also the amount will be some random number between 100 and 200 (so we don't waste too much money).
 // 4. At the end please print at the console the transactions: the From person's name, the To Person's name and the Amount! 
 {
-    public class Bank : IBank
+    public class Bank 
     {
         public ArrayList GenerateFinancialTransactions(int numberOfTransactions)
         {
