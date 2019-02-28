@@ -8,9 +8,9 @@
         Title="Bank Transactions" Height="450" Width="800" ResizeMode="NoResize">
     <StackPanel Orientation="Vertical">
         <Grid Width="780" Height="100" VerticalAlignment="Top" Margin="5">
-            <TextBlock Height="20" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0,0,0" Text="Iterations" FontSize="16" TextAlignment="Center" IsEnabled="false" FontWeight="ExtraLight"/>
-            <TextBox x:Name="IterationInputBox" Height="50" Width="150" HorizontalAlignment="Left" Margin="10" Text="20" FontSize="36" TextAlignment="Center" PreviewTextInput="PreviewTextInput"/>
-            <Button x:Name="GenerateTransactionsButton" Content="Generate Transactions" Width="150" Height="50" HorizontalAlignment="Right" Margin="10" Click="GenerateTransactionsButton_Click">
+            <TextBlock Height="20" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0" Text="Iterations" FontSize="16" TextAlignment="Center" IsEnabled="false" FontWeight="ExtraLight"/>
+            <TextBox x:Name="IterationInputBox" Height="50" Width="150" HorizontalAlignment="Left"  Margin="50,0,0,0" Text="20" FontSize="36" TextAlignment="Center" PreviewTextInput="PreviewTextInput" FontWeight="ExtraLight"/>
+            <Button x:Name="GenerateTransactionsButton" Content="Generate Transactions" Width="150" Height="50" HorizontalAlignment="Right" Margin="0,0,50,0" Click="GenerateTransactionsButton_Click">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Style.Triggers>
@@ -26,13 +26,10 @@
             <TextBlock Width="260" Height="20" Text="Balance" FontSize="16" TextAlignment="Center" IsEnabled="false" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="ExtraLight" Margin="5"/>
             <TextBlock Width="480" Height="20" Text="Transactions" FontSize="16" TextAlignment="Center" IsEnabled="false" HorizontalAlignment="Right" VerticalAlignment="Top" FontWeight="ExtraLight" Margin="0,5,30,0"/>
             <StackPanel Orientation="Horizontal">
-                <TextBlock x:Name="SummaryOutput" Width="260" Margin="5,30,0,0" FontSize="20" TextAlignment="Center"/>
+                <TextBlock x:Name="SummaryOutput" Width="260" Margin="5,30,0,0" FontSize="20" FontWeight="ExtraLight"/>
                 <ScrollViewer Width="500" Margin="5,30,0,0">
                     <TextBlock x:Name="TransactionsOutput" Width="480" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-         ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="20" TextAlignment="Center">
-                        <TextBlock.Effect>
-                            <BlurEffect/>
-                        </TextBlock.Effect>
+         ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="20" FontWeight="ExtraLight">
                     </TextBlock>
                 </ScrollViewer>
             </StackPanel>
