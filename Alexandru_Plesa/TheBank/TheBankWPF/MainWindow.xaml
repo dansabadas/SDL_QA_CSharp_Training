@@ -9,7 +9,7 @@
     <StackPanel Orientation="Vertical">
         <Grid Width="780" Height="100" VerticalAlignment="Top" Margin="5">
             <TextBlock Height="20" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0" Text="Iterations" FontSize="16" TextAlignment="Center" IsEnabled="false" FontWeight="ExtraLight"/>
-            <TextBox x:Name="IterationInputBox" Height="50" Width="150" HorizontalAlignment="Left"  Margin="50,0,0,0" Text="20" FontSize="36" TextAlignment="Center" PreviewTextInput="PreviewTextInput" FontWeight="ExtraLight"/>
+            <TextBox x:Name="IterationInputBox" Height="50" Width="150" HorizontalAlignment="Left"  Margin="50,0,0,0" Text="20" FontSize="36" TextAlignment="Center" PreviewTextInput="PreviewTextInput" FontWeight="ExtraLight" MaxLength="3"/>
             <Button x:Name="GenerateTransactionsButton" Content="Generate Transactions" Width="150" Height="50" HorizontalAlignment="Right" Margin="0,0,50,0" Click="GenerateTransactionsButton_Click">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
