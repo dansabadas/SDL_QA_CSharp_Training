@@ -24,11 +24,12 @@ namespace TheBankWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static readonly Regex _regex = new Regex("[^0-9.-]+");
+        private static readonly Regex _regex = new Regex("[0-9]");
 
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void GenerateTransactionsButton_Click(object sender, RoutedEventArgs e)
@@ -36,9 +37,8 @@ namespace TheBankWPF
             string transactionsResult = "";
             string summaryResult = "";
             IBank bank = new Bank();
-            Typeface myTypeface = new Typeface("Segoe UI");
-
             
+
 
             ArrayList bankTransactions = bank.GenerateFinancialTransactions(Int32.Parse(IterationInputBox.Text));
             foreach(FinancialTransaction financialTransaction in bankTransactions)
@@ -56,9 +56,22 @@ namespace TheBankWPF
             TransactionsOutput.Text = transactionsResult;
             SummaryOutput.Text = summaryResult;
 
-            FormattedText formattedText = new FormattedText(TransactionsOutput.Text, CultureInfo.CurrentCulture, FlowDirection.LeftToRight, myTypeface, TransactionsOutput.FontSize, Brushes.Red);
+            ChangeTextBlockHeight(TransactionsOutput);
+        }
 
-            TransactionsOutput.Height = formattedText.Height;
+        public void ChangeTextBlockHeight(TextBlock textBlock)
+        {
+            Typeface myTypeface = new Typeface(textBlock.FontFamily, textBlock.FontStyle, textBlock.FontWeight, textBlock.FontStretch);
+
+            FormattedText formattedText = new FormattedText(
+                textBlock.Text, 
+                CultureInfo.CurrentCulture, 
+                FlowDirection.LeftToRight, 
+                myTypeface,
+                textBlock.FontSize, 
+                Brushes.Red);
+
+            textBlock.Height = formattedText.Height;
         }
 
         private static bool IsTextAllowed(string text)
@@ -68,7 +81,7 @@ namespace TheBankWPF
 
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = !IsTextAllowed(e.Text);
+            e.Handled = IsTextAllowed(e.Text);
         }
     }
 }

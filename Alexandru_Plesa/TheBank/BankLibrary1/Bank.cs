@@ -18,8 +18,8 @@ namespace BankLibrary
 
             for (int transaction = 0; transaction < nrOfTransactions; transaction++)
             {
-                Person creditedPerson = new Person(transaction % 5, "Person" + (transaction % 5));
-                Person debitedPerson = new Person(transaction % 3, "Person" + (transaction % 3));
+                Person creditedPerson = new Person(transaction % 5, "Person " + (transaction % 5));
+                Person debitedPerson = new Person(transaction % 3, "Person " + (transaction % 3));
 
                 FinancialTransaction financialTransaction = new FinancialTransaction(creditedPerson, debitedPerson, rnd.Next(100, 200));
                 allTransaction.Add(financialTransaction);
