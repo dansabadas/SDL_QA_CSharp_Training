@@ -14,7 +14,7 @@ namespace TheBank
 
     public class Person
     {
-        
+
 
         int Id { get; }
         string Name { get; }
@@ -39,7 +39,7 @@ namespace TheBank
         private Person FromPerson { get; }
         private Person ToPerson { get; }
         public FinancialTransaction(int id, string name) : base(id, name) { }
-               
+
         public override string ToString()
         {
             return $"{Amount} , {FromPerson} , {ToPerson}";
@@ -58,25 +58,27 @@ namespace TheBank
                 Random suma = new Random();
                 double amount = suma.Next(100, 200);
                 Transaction.Add(amount);
+
                 for (int i = 0; i < 5; i++)
 
                 {
                     Person personaFrom = new Person(11, "john" + i);
                     Transaction.Add(personaFrom);
-                    for (int j = 0; j < 3; j++)
-                    {
-                        Person personaTo = new Person(12, "dick" + j);
-                        Transaction.Add(personaTo);
-                        Console.WriteLine($"{amount} dollars come from {personaFrom}, will be received by {personaTo}");
-                    }
+                }
+                for (int j = 0; j < 3; j++)
+                {
+                    Person personaTo = new Person(12, "dick" + j);
+                    Transaction.Add(personaTo);
 
                 }
+                Console.WriteLine(Transaction.ToString());
+            }
 
-            } 
-            return Transaction;
+                return Transaction;
         }
-
     }
+}      
+
 
     class Program
     {
@@ -84,11 +86,16 @@ namespace TheBank
         {
             IBank myBank = new Bank();
             ArrayList myList = myBank.GenerateFinancialTransactions(10);
-            Console.WriteLine("suntem in progr pp");
+            Console.WriteLine($"{myList.ToString()}");
+            
+            {
+                Console.WriteLine("suntem in progr pp");
+                //Console.WriteLine($"{Amount} dollars come from {personaFrom}, will be received by {personaTo}");
 
-            Console.ReadKey();
+                Console.ReadKey();
+            }
         }
     }
-}
+
 
           
