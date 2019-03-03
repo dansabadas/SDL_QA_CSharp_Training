@@ -38,10 +38,11 @@ namespace ClassLibrary1
 
             {
                 new Country(1, "USA"),
-                new Country(2, "France"),
+                new Country(2, "Romania"),
                 new Country(3, "Germany"),
                 new Country(4, "China"),
                 new Country(5, "Italy"),
+
             };
             return myCountries;
         }
@@ -62,11 +63,11 @@ namespace ClassLibrary1
 
         public List<Soldier> RetrieveSoldiers()
         {
-            List<Soldier> topFive= new List<Soldier>();
+            List<Soldier> topFive = new List<Soldier>();
             topFive = soldiers.OrderByDescending(soldier => soldier.NumberOfKills).Take(5).ToList();
             return topFive;
         }
-       
+
         public List<Soldier> GetChineseSoldiers()
         {
             List<Soldier> chineseSoldiers = new List<Soldier>();
@@ -92,12 +93,13 @@ namespace ClassLibrary1
                 .Where(soldier => soldier.CountryId == 1 || soldier.CountryId == 4)
                 .Select(soldier => new
                 {
-                    soldier.Name,
+                    Name = soldier.Name,
                     Kills = soldier.NumberOfKills,
                     Country = countries.Single(country => country.ID == soldier.CountryId).Name
                 })
                 .OrderByDescending(anonSoldier => anonSoldier.Kills)
-                .Select(anonSoldier => (dynamic)anonSoldier).ToList();
+                .Select(anonSoldier => (dynamic)anonSoldier)
+                .ToList();
             return reportedSoldiers;
         }
 
@@ -105,5 +107,37 @@ namespace ClassLibrary1
         {
             return soldiers.Sum(soldier => soldier.NumberOfKills);
         }
-    }   
+
+        // Homework
+
+        public Soldier GetTheMostLethalRomaniaSoldier()
+        {
+            List<Soldier> romanianSoldiers = new List<Soldier>();
+            romanianSoldiers = soldiers.Where(soldier => soldier.CountryId == 2).OrderByDescending(soldier => soldier.NumberOfKills).Take(1).ToList();
+            return romanianSoldiers[0];
+        }
+
+        public int GetNumberOfEnglishSoldiers()
+        {
+            List<Soldier> usaSoldiers = new List<Soldier>();
+            usaSoldiers = soldiers.Where(soldier => soldier.CountryId == 1).ToList();
+            return usaSoldiers.Count;
+        }
+
+        public double GetAverageNumberOfKillsForAmericanSoldiers()
+        {
+            List<Soldier> usaSoldiers = new List<Soldier>();
+            usaSoldiers = soldiers.Where(soldier => soldier.CountryId == 1).ToList();
+            return usaSoldiers.Average(soldier => soldier.NumberOfKills);
+        }
+
+        public double GetAverageNumberOfKillsForSoldiersBelongingToCountry(Country country)
+        {
+            List<Soldier> soldiersList = new List<Soldier>();
+            soldiersList = soldiers
+                .Where(soldier => soldier.CountryId == country.ID)
+                .ToList();
+            return soldiersList.Average(soldier => soldier.NumberOfKills);
+        }
+    }
 }
