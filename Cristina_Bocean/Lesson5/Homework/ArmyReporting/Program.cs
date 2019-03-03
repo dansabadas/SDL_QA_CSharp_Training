@@ -66,12 +66,20 @@ namespace ArmyReporting
 
             Console.WriteLine($"lethality=" + myFirstArray.GetLethality());
 
+            // Homework 
 
             Console.WriteLine($"Top Romanian killer = " + myFirstArray.GetTheMostLethalRomaniaSoldier());
+
             Console.WriteLine($"Total number of USA soldiers = " + myFirstArray.GetNumberOfEnglishSoldiers());
+
             Console.WriteLine($"Average number of kills in the USA = " + myFirstArray.GetAverageNumberOfKillsForAmericanSoldiers());
-            Country myCountry = new Country(3, "Germany");
-            Console.WriteLine($"Average number of kills in {myCountry.Name} = " + myFirstArray.GetAverageNumberOfKillsForSoldiersBelongingToCountry(myCountry));
+
+            string[] countryList = { "USA", "Romania", "Germany", "China", "Italy" };
+            for (int i = 0; i < 5; i++)
+            {
+                Country myCountry = new Country(i + 1, countryList[i]);
+                Console.WriteLine($"Average number of kills in {myCountry.Name} = " + myFirstArray.GetAverageNumberOfKillsForSoldiersBelongingToCountry(myCountry));
+            }
         }
     }
 }
