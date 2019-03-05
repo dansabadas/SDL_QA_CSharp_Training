@@ -48,10 +48,15 @@ namespace ArmyReporting
             Console.WriteLine("tema ");
 
             Console.WriteLine("afisez cel mai bun sldat roman: ");
+
             foreach (var soldier in myArmy.GetTheMostLethalRomanianSoldier())
             {
                 Console.WriteLine(soldier);
             }
+
+            Console.WriteLine($"Numarul soldatilor englezi este {myArmy.GetNumberofEnglishSoldiers()}");
+
+            Console.WriteLine($"Media soldatilor ucisi de americani = {myArmy.GetAverageNumberOfKillsForAmericanSoldiers()}");
         }
     }
  }

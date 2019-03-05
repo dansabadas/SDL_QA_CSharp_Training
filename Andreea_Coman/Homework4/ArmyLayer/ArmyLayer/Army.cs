@@ -13,7 +13,7 @@ namespace ArmyLayer
         private List<Country> countries;
         public Army()  // constructor 
         {
-            soldiers = CreateSoldier(20);
+            soldiers = CreateSoldier(150);
             countries = CreateCountries();
         }
         private List<Soldier> CreateSoldier(int soldiers)
@@ -78,6 +78,15 @@ namespace ArmyLayer
             return RomanianSoldiers;
             }
 
+        public int GetNumberofEnglishSoldiers()
+        {
+            return soldiers.Count(soldier => soldier.CountryId == 2);
+        }
+        public double GetAverageNumberOfKillsForAmericanSoldiers()
+        {
+            return soldiers.Where(soldiers => soldiers.CountryId == 0).Average(soldier => soldier.NrOfKills);
+
+                       }
         public List<dynamic> GetFullReport()
         {
             //chinese and USA soldiers, whithout theyr ID's (name=" ", country = "", kills = "") ordered by number of kills

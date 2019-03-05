@@ -15,5 +15,7 @@ namespace ArmyLayer
         List<dynamic> GetFullReport();
 
         List<Soldier> GetTheMostLethalRomanianSoldier();
+
+        //List<Soldier> GetNumberofEnglishSoldiers();
     }
 }
