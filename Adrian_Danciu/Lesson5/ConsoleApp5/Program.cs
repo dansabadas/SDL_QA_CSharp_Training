@@ -63,7 +63,7 @@ namespace ConsoleApp5
             }
 
             Console.WriteLine($"lethality={myFirstArmy.GetLethality()}");
-
+            
         }
-    }
+}
 }
