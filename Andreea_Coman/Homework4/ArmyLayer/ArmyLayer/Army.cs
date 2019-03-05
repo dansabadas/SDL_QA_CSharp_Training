@@ -24,7 +24,7 @@ namespace ArmyLayer
             for (int soldier = 0; soldier < soldiers; soldier++)
             {
                 Soldier sol = new Soldier(soldier, "Soldier " + soldier);
-                sol.CountryId = soldier % 5;
+                sol.CountryId = soldier % 6;
                 sol.NrOfKills = rnd.Next(0, 100);
                 army.Add(sol);
             }
@@ -40,7 +40,8 @@ namespace ArmyLayer
             new Country(2, "Japan"),
             new Country(3, "UK"),
             new Country(4, "Germany"),
-            new Country(5, "China")
+            new Country(5, "China"),
+            new Country(6, "Romania")
 
             };
             return countries;
@@ -66,14 +67,16 @@ namespace ArmyLayer
         public List<Soldier> GetChineseSoldiers()
         {
             List<Soldier> ChineseSoldiers = new List<Soldier>();
-            //foreach (var soldier in soldiers)
-            //{
-            //    if (soldier.CountryId == 5)
-            //        ChineseSoldiers.Add(soldier);
-            //}
-            ChineseSoldiers = soldiers.Where(soldiers => soldiers.CountryId == 5).ToList();
-            return soldiers;
+            ChineseSoldiers = soldiers.Where(soldier => soldier.CountryId == 4).ToList();
+            return ChineseSoldiers;
         }
+
+       public List<Soldier> GetTheMostLethalRomanianSoldier()
+        {
+            List<Soldier> RomanianSoldiers = new List<Soldier>();
+            RomanianSoldiers = soldiers.Where(soldiers => soldiers.CountryId == 5).OrderByDescending(soldier => soldier.NrOfKills).Take(1).ToList();
+            return RomanianSoldiers;
+            }
 
         public List<dynamic> GetFullReport()
         {
