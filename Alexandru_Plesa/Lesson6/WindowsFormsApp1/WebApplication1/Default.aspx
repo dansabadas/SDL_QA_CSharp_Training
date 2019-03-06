@@ -1,42 +1,29 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    
+    <asp:Button ID="HidePanelButton" runat="server" Height="50px" Text="Hide Panel" Width="150px" OnClick="HidePanelButton_Click" />
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+    <asp:ListBox ID="ListBox1" runat="server">
+        <Items>
+            <asp:ListItem runat="server" Text="1" Value="1"></asp:ListItem>
+            <asp:ListItem runat="server" Text="1" Value="1"></asp:ListItem>
+        </Items>
+    </asp:ListBox>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
+   <asp:Panel ID="Panel1" runat="server" Visible="False">
+       <asp:Button ID="IncrementButton" runat="server" Text="Increment Button" Height="50px" OnClick="IncrementButton_Click" Width="150px" />
+        <asp:TextBox ID="TextBox1" runat="server" Width="60px"></asp:TextBox>
+   </asp:Panel> 
 
+    <asp:Panel ID="Panel2" runat="server">
+        <asp:Button ID="ViewStateButton" runat="server" Height="50px" OnClick="Button1_Click" Text="View State" Width="150px" />
+        <asp:TextBox ID="TextBox2" runat="server" Width="60px"></asp:TextBox>
+    </asp:Panel>
+    
+    
+
+    
+
+   
 </asp:Content>
