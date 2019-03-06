@@ -92,7 +92,7 @@ namespace ClassLibrary1
                 .Where(soldier => soldier.CountryId == 1 || soldier.CountryId == 4)
                 .Select(soldier => new
                 {
-                    soldier.Name,
+                    Name = soldier.Name,
                     Kills = soldier.NumberOfKills,
                     Country = countries.Single(country => country.ID == soldier.CountryId).Name
                 })
