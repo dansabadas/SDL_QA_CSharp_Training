@@ -6,6 +6,7 @@
         public int ID { get; set; }
         public string Name { get; set; }
         public int CountryId { get; set; }
+        public string CountryName { get; set; }
         public int NrOfKills { get; set; }
         public Soldier(int iD, string name)
         {

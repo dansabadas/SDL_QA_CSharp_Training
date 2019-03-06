@@ -57,6 +57,13 @@ namespace ArmyReporting
             Console.WriteLine($"Numarul soldatilor englezi este {myArmy.GetNumberofEnglishSoldiers()}");
 
             Console.WriteLine($"Media soldatilor ucisi de americani = {myArmy.GetAverageNumberOfKillsForAmericanSoldiers()}");
+
+            //   Console.WriteLine($"{myArmy.GetAverageNumberOfKillsForSoldiersBelongingToCountry()}");
+
+            //foreach (var country in myArmy.GetAverageNumberOfKillsForSoldiersBelongingToCountry())
+            //{
+            //    Console.WriteLine(country);
+            //}
         }
     }
  }

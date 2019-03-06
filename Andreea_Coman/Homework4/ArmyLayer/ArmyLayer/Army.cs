@@ -85,8 +85,16 @@ namespace ArmyLayer
         public double GetAverageNumberOfKillsForAmericanSoldiers()
         {
             return soldiers.Where(soldiers => soldiers.CountryId == 0).Average(soldier => soldier.NrOfKills);
+         }
 
-                       }
+        //public double GetAverageNumberOfKillsForSoldiersBelongingToCountry(Country country)
+        //{
+
+        //    return soldiers.Where(soldiers => soldiers.CountryName.Equals(country)).Average(soldier => soldier.NrOfKills);
+
+        //}
+
+        
         public List<dynamic> GetFullReport()
         {
             //chinese and USA soldiers, whithout theyr ID's (name=" ", country = "", kills = "") ordered by number of kills
