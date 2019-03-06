@@ -27,5 +27,7 @@ namespace ArmyLayer
         double GetAverageNumberOfKillsForAmericanSoldiers();
 
         double GetAverageNumberOfKillsForSoldiersBelongingToCountry(Country country);
+
+        List<dynamic> GetFullByCountry();
     }
 }

@@ -30,11 +30,13 @@
         </Items>
     </asp:ListBox>
     
-
+    <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
     
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true">
 
+    </asp:GridView>
       
-
-
+    <asp:Button ID="Button4" runat="server" Text="search" OnClick="Button4_Click" />
+    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
 </asp:Content>
 

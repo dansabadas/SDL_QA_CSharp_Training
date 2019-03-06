@@ -229,6 +229,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArmyLayer\ArmyLayer.csproj">
+      <Project>{CC87BE36-95BD-461E-BA1D-75C255EB4001}</Project>
+      <Name>ArmyLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsApp1\WindowsFormsApp1.csproj">
+      <Project>{d18aa38c-6063-4c46-8d7b-074451160d7a}</Project>
+      <Name>WindowsFormsApp1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfApp1\WpfApp1.csproj">
+      <Project>{54e5c63e-9240-46e8-9e6a-802ea3f87d1d}</Project>
+      <Name>WpfApp1</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

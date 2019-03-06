@@ -43,7 +43,7 @@ namespace ArmyLayer
             return list1;
         }
 
-        private List<Country> CreateCountries()
+        public List<Country> CreateCountries()
         {
             List<Country> list2 = new List<Country>()
             {
@@ -71,9 +71,28 @@ namespace ArmyLayer
             reportedSoldiers = soldiers.Where(soldier => soldier.CountryId == 1 || soldier.CountryId == 5)
                  .Select(soldier => (dynamic)new
                  {
-                     Name = soldier.Name,
+                     soldier.Name,
                      Kills = soldier.NumberOfKills,
-                     Country = countries.Single(country => country.Id == soldier.CountryId).Name
+                     Country = countries.Single(country => country.Id == soldier.CountryId).Name,
+                     
+                 })
+                 .OrderByDescending(anonSoldier => anonSoldier.Kills)
+                 .Select(anonSoldier => (dynamic)anonSoldier)
+                 .ToList();
+
+            return reportedSoldiers;
+        }
+
+        public List<dynamic> GetFullByCountry()
+        {
+            List<dynamic> reportedSoldiers = new List<dynamic>();
+            reportedSoldiers = soldiers.Where(soldier => soldier.CountryId == 1 || soldier.CountryId == 5)
+                 .Select(soldier => (dynamic)new
+                 {
+                     soldier.Name,
+                     Kills = soldier.NumberOfKills,
+                     Country = countries.Single(country => country.Id == soldier.CountryId).Name,
+                     soldier.CountryId
                  })
                  .OrderByDescending(anonSoldier => anonSoldier.Kills)
                  .Select(anonSoldier => (dynamic)anonSoldier)
