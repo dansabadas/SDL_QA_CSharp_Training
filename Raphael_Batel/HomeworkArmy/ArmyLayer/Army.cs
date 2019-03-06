@@ -39,14 +39,16 @@ namespace ArmyLayer
             List<dynamic> reportedSoldiers;
             reportedSoldiers =
                 soldiers.Where(s => s.CountryId == 1 || s.CountryId == 5)
-                .Select(s =>  new
+                .Select(s => new
                 {
+                    Id = s.Id,
                     Name = s.Name,
                     Kills = s.NumberKills,
-                    Country = countries.Single(c => c.Id == s.CountryId).Name
-                    })
+                    Country = countries.Single(c => c.Id == s.CountryId).Name,
+                    CountryId = s.CountryId
+                })
                 .OrderByDescending(ds => ds.Kills)
-                .Select( ds => (dynamic) ds)
+                .Select(ds => (dynamic)ds)
                 .ToList();
             return reportedSoldiers;
         }
