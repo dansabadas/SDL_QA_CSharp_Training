@@ -82,12 +82,11 @@ namespace ClassLibrary1
             //chinese and USA soldiers, whithout theyr ID's (name=" ", country = "", kills = "") ordered by number of kills
             List < dynamic > SoldiersInReport = new List<dynamic>();
             SoldiersInReport = soldiers.Where(soldier => soldier.CountryId == 1 || soldier.CountryId == 5)
-                .Select(soldier => (dynamic)new { Name = soldier.Name, kills = soldier.NrOfKills, Country = countries.Single(Country => Country.Id == soldier.CountryId).Name})
+                .Select(soldier => (dynamic)new { Name = soldier.Name, kills = soldier.NrOfKills, Country = countries.Single(Country => Country.Id == soldier.CountryId).Name, SoldierID = soldier.ID, CountryID=soldier.CountryId })
                 .OrderByDescending(anonSoldier => anonSoldier.kills)
                 .Select(anonSoldier => (dynamic)anonSoldier)
                 .ToList();
-
-            return SoldiersInReport;
+                       return SoldiersInReport;
                  }
 
         public int GetLethality()
