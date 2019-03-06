@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmyReporting", "Homework4\ArmyReporting.csproj", "{FDDAAD1C-E900-4FE0-9B7A-B400CF30B858}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmyLayer", "ArmyLayer\ArmyLayer.csproj", "{A84A50A1-C8AD-448A-841A-1110897ABEB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDDAAD1C-E900-4FE0-9B7A-B400CF30B858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDDAAD1C-E900-4FE0-9B7A-B400CF30B858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDDAAD1C-E900-4FE0-9B7A-B400CF30B858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDDAAD1C-E900-4FE0-9B7A-B400CF30B858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A84A50A1-C8AD-448A-841A-1110897ABEB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84A50A1-C8AD-448A-841A-1110897ABEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84A50A1-C8AD-448A-841A-1110897ABEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84A50A1-C8AD-448A-841A-1110897ABEB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBF12108-45F2-47A2-BBDB-36946836FB0E}
+	EndGlobalSection
+EndGlobal
