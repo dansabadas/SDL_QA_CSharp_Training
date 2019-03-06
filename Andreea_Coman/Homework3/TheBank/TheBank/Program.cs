@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheBank;
 
 namespace TheBank
 {
@@ -31,14 +32,14 @@ namespace TheBank
         }
     }
 
-    public class FinancialTransaction : Person
+    public class FinancialTransaction
     {
 
         double Amount { get; }
 
         private Person FromPerson { get; }
         private Person ToPerson { get; }
-        public FinancialTransaction(int id, string name) : base(id, name) { }
+        public FinancialTransaction()  { }
 
         public override string ToString()
         {
