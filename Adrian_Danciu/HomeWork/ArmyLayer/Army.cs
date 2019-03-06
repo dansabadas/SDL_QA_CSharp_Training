@@ -95,7 +95,8 @@ namespace ArmyLayer
                 {
                     Name = soldier.Name,
                     Kills = soldier.NumberOfKill,
-                    Country = countries.Single(country => country.Id == soldier.CountryID).Name
+                    Country = countries.Single(country => country.Id == soldier.CountryID).Name,
+                    SoldierId = soldier.Id
                 })
                 .OrderByDescending(anonSoldier => anonSoldier.Kills)
                 .Select(anonSoldier => (dynamic)anonSoldier)
