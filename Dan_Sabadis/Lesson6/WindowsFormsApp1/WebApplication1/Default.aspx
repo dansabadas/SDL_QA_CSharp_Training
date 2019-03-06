@@ -17,9 +17,23 @@
 
     <asp:Button ID="Button3" runat="server" Text="Hide Panel Alternate" OnClick="Button3_Click" />
     
+    <asp:DropDownList ID="DropDownList1" runat="server">
+</asp:DropDownList>
+    
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" AllowPaging="true" PageSize="10">
+        <Columns>
+        <asp:BoundField ItemStyle-Width="150px" DataField="Name" HeaderText="Soldier Name" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="Kills" HeaderText="Enemies Annihilated" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="Country" HeaderText="Homeland" />
+        <asp:BoundField ItemStyle-Width="150px" DataField="SoldierId" HeaderText="ID" Visible="False" />
+        </Columns>
+    </asp:GridView>
+    
     <asp:Panel ID="panel2" runat="server">
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button 2" />
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Search Soldiers " />
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
     </asp:Panel>
 
  

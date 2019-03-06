@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "..\WpfApp1\WpfAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{0FC66A50-F86D-4FFB-A0DE-DB938090D083}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmyLayer", "..\ArmyLayer\ArmyLayer.csproj", "{B28D880D-A80F-4A9F-874A-B7A2D63A3A38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0FC66A50-F86D-4FFB-A0DE-DB938090D083}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FC66A50-F86D-4FFB-A0DE-DB938090D083}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FC66A50-F86D-4FFB-A0DE-DB938090D083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B28D880D-A80F-4A9F-874A-B7A2D63A3A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28D880D-A80F-4A9F-874A-B7A2D63A3A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B28D880D-A80F-4A9F-874A-B7A2D63A3A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B28D880D-A80F-4A9F-874A-B7A2D63A3A38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
