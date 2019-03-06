@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "..\WpfApp1\WpfAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{4E5CC6AF-8BC5-4C5E-A3B7-AAB22A45DE56}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E197B7B-E366-4E2F-97B7-7A6F34B95306}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Lesson5\Homework\ArmyLayer\ArmyLayer.sln = ..\..\Lesson5\Homework\ArmyLayer\ArmyLayer.sln
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArmyLayer", "..\ArmyLayer\ArmyLayer.csproj", "{29FE1392-DFDF-41C5-8A2B-E1156DC62722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{4E5CC6AF-8BC5-4C5E-A3B7-AAB22A45DE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E5CC6AF-8BC5-4C5E-A3B7-AAB22A45DE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E5CC6AF-8BC5-4C5E-A3B7-AAB22A45DE56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FE1392-DFDF-41C5-8A2B-E1156DC62722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FE1392-DFDF-41C5-8A2B-E1156DC62722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FE1392-DFDF-41C5-8A2B-E1156DC62722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FE1392-DFDF-41C5-8A2B-E1156DC62722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
