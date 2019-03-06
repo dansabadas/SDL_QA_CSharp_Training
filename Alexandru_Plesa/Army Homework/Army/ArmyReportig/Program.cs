@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ArmyLayer;
 
-namespace ArmyReportig
+namespace ArmyReporting
 {
     class Program
     {

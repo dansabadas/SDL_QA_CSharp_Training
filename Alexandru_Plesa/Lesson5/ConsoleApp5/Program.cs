@@ -38,7 +38,7 @@ namespace ConsoleApp5
 
             Army army = new Army();
 
-            List<Soldier> army1 =  army.RetrueveSoldiers();
+            List<Soldier> myArmy =  army.RetrueveSoldiers();
 
             //foreach(Soldier soldier in army1)
             //{
@@ -52,7 +52,7 @@ namespace ConsoleApp5
             //    Console.WriteLine(country);
             //}
 
-            List<dynamic> army2 = army.GetFullReport(army1);
+            List<dynamic> army2 = army.GetFullReport(myArmy);
 
             foreach (var soldierReport in army2)
             {

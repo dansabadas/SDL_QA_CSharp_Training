@@ -42,7 +42,6 @@ namespace ClassLibrary2
                 new Country(5, "China")
             };
 
-
             return countries;
         }
 
@@ -74,11 +73,11 @@ namespace ClassLibrary2
         {
             List<dynamic> reportedSoldiers = new List<dynamic>();
             reportedSoldiers = soldiers.Where(soldier => soldier.CountryId == 1 || soldier.CountryId == 5)
-                .Select(soldir => new
+                .Select(soldier => new
             {
-                Name = soldir.Name,
-                Kills = soldir.NrOfKills,
-                country = _countries.Single(country => country.ID == soldir.CountryId).Name
+                Name = soldier.Name,
+                Kills = soldier.NrOfKills,
+                country = _countries.Single(country => country.ID == soldier.CountryId).Name
             })
             .OrderByDescending(anonSoldier => anonSoldier.Kills)
             .Select(anonSoldier => (dynamic)anonSoldier)
