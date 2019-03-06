@@ -47,7 +47,7 @@ namespace WebApplication1
         {
             if (Panel1.Visible == true)
             {
-                Panel1.Visible = false;
+                Panel1.Visible = false;  
                 Panel2.Visible = true;
             }
             else
