@@ -11,7 +11,7 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace WebApplication1
                 panel1.Visible = true;
             }
 
-            ListBox1.Items.Add(new ListItem("mytext"));
+            ListBox1.Items.Add(new ListItem() {Text = "12", Value=10.ToString() });
         }
     }
 }

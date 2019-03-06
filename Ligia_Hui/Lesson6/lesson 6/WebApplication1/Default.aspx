@@ -19,4 +19,6 @@
        <asp:Button ID="Button2" runat="server" Text="Press Me 2!" OnClick="Button2_Click" />
        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </asp:Panel>
+    <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+
 </asp:Content>
